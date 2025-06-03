@@ -1,0 +1,152 @@
+---
+import Rueda2 from "./Rueda2";
+import tommy from "../assets/tommy.png";
+import mateo from "../assets/mateo.png";
+import chiara from "../assets/chiara.png";
+import nano from "../assets/nano.png";
+import agus from "../assets/agus.png";
+import mili from "../assets/mili.png";
+import loli from "../assets/loli.png";
+import lulu from "../assets/lulu.png";
+
+const members = [
+  {
+    role: "No quiere que le digan jefe, pero... Diseña, filma, edita, resuelve y piensa en el próximo proyecto mientras vos estás terminando el anterior.",
+    img: tommy,
+  },
+  {
+    role: "Nuestro diseñador desde antes que TAPE tenga nombre. Tranquilo por fuera, una bestia por dentro. Es la voz baja que más impacto deja.",
+    img: mateo,
+  },
+  {
+    role: "No sabemos bien como lo hace, pero siempre la rompe. No hace ruido, no pregunta, solo aparece con algo que te deja sin palabras. Y sí, es de TAPE.",
+    img: chiara,
+  },
+  {
+    role: "El que resuelve antes de que termines la frase. Creativo nato, genio de la edición y dueño del “tranqui”, ya lo tengo.",
+    img: nano,
+  },
+  {
+    role: "/code=tape001 El mago del código. Pone Olga de fondo, se mete en la Matrix y no sale hasta que el sitio funcione perfecto.",
+    img: agus,
+  },
+  {
+    role: "Nadie la vio, pero todos la usan. Soluciona todo sin levantar la voz.",
+    img: mili,
+  },
+  {
+    role: "La que ya entendió todo. Sabe qué postear, cuándo y cómo. Piensa rápido, edita mejor y publica sin pestañear. No es magia, es Loli!",
+    img: loli,
+  },
+  {
+    role: "Recién llegada, pero en modo TAPE. Hace copies, ideas y magia con su compu. Si ves algo nuevo en las redes, probablemente sea culpa de ella.",
+    img: lulu,
+  },
+];
+---
+
+<main class="quienesSomos">
+  <Rueda2 client:load />
+
+  <h1>¡QUIÉNES SOMOS!</h1>
+  <h2>NO SOMOS BOTS, SOMOS PERSONAS</h2>
+  <div class="teamContainer">
+    {
+      members.map((member) => (
+        <div class="teamMember">
+          <div class="teamMemberContainer">
+            <img src={member.img.src} alt="" class="teamMemberImg" />
+          </div>
+          <p>{member.role}</p>
+        </div>
+      ))
+    }
+  </div>
+</main>
+
+<style>
+  .quienesSomos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #fcfcfa;
+  }
+  .quienesSomos h1 {
+    font-family: "GothamBold", "Gotham";
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 0;
+    margin-top: 100px;
+  }
+  .quienesSomos h2 {
+    font-family: "GothamBook", "Gotham";
+    font-weight: 400;
+    font-size: 1.95rem;
+    margin: 0;
+  }
+  .teamContainer {
+    margin-top: 70px;
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    z-index: 1;
+  }
+  .teamMember {
+    height: fit-content;
+    width: 300px;
+  }
+  @keyframes showText {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .teamMember p {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    font-family: "GothamBook", "Gotham";
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    height: 80px;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .teamMemberContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+  }
+  .teamMemberImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  .teamMemberImg:hover {
+    transform: scale(1.05);
+  }
+  .teamMember:hover p {
+    animation: showText 0.4s ease-in-out forwards;
+  }
+</style>

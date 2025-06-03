@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
+---
+
+<div class="navbarContainer">
+  <nav>
+    <div class="logoContainer">
+      <a href="/">
+        <Image src={logo} alt="Logo" width={1000} class="logo" />
+      </a>
+    </div>
+    <div class="linksContainer">
+      <ul class="nav-links">
+        <li><a href="/">QUIÉNES SOMOS</a></li>
+        <li><a href="/about">SERVICIOS</a></li>
+        <li><a href="/contact">PORTFOLIO</a></li>
+        <li><a href="/contact">FAQ</a></li>
+        <li><a href="/contact">CONTACTO</a></li>
+      </ul>
+      <ul class="social-links">
+        <li><a href=""><FaInstagram /></a></li>
+        <li><a href=""><FaFacebookF /></a></li>
+        <li><a href=""><FaLinkedinIn /></a></li>
+        <li><a href=""><FaWhatsapp /></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .navbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #121619;
+    color: white;
+    padding: 0px 70px;
+    box-sizing: border-box;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+  .linksContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links li a {
+    color: #e2dbca;
+    text-decoration: none;
+    font-family: "GothamBold", "Gotham", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  .social-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    height: 30px;
+    width: 30px;
+    background-color: #e2dbca;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>

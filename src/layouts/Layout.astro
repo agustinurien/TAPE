@@ -1,0 +1,48 @@
+---
+import Navbar from "../components/layout/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @font-face {
+    font-family: "GothamBold", "Gotham";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Gotham-Bold.otf") format("otf");
+  }
+  @font-face {
+    font-family: "GothamBook", "Gotham";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Gotham-Book.otf") format("otf");
+  }
+  @font-face {
+    font-family: "GothamLight", "Gotham";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/Gotham-Light.otf") format("otf");
+  }
+</style>

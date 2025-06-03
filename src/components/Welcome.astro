@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import Rueda from "../components/Rueda.jsx";
+import oficina from "../assets/oficina.JPG";
+import { FaHeadphones, FaLaptopCode } from "react-icons/fa";
+import { IoIosPhonePortrait, IoMdFilm } from "react-icons/io";
+import { IoCamera } from "react-icons/io5";
+import {
+  MdDesignServices,
+  MdOutline360,
+  MdOutlineBrandingWatermark,
+  MdSlowMotionVideo,
+} from "react-icons/md";
+import { RiMegaphoneFill } from "react-icons/ri";
+import { GiCrafting, GiLargePaintBrush } from "react-icons/gi";
+
+const servicio = [
+  {
+    title: "DESARROLLO WEB",
+    img: FaLaptopCode,
+  },
+  {
+    title: "REDES SOCIALES",
+    img: IoIosPhonePortrait,
+  },
+  {
+    title: "FOTOGRAFIA",
+    img: IoCamera,
+  },
+  {
+    title: "RECORRIDO 360",
+    img: MdOutline360,
+  },
+  {
+    title: "DISEÑO GRÁFICO",
+    img: MdDesignServices,
+  },
+  {
+    title: "MUSICALIZACIÓN",
+    img: FaHeadphones,
+  },
+  {
+    title: "PAUTA PUBLICITARIA",
+    img: RiMegaphoneFill,
+  },
+  {
+    title: "CONTENT CREATOR",
+    img: GiCrafting,
+  },
+  {
+    title: "IDENTIDAD DE MARCA",
+    img: MdOutlineBrandingWatermark,
+  },
+  {
+    title: "FILMAKER",
+    img: IoMdFilm,
+  },
+  {
+    title: "EDITOR DE VIDEOS",
+    img: MdSlowMotionVideo,
+  },
+  {
+    title: "DEPTO.CREATIVO",
+    img: GiLargePaintBrush,
+  },
+];
+---
+
+<main>
+  <div class="contenedor">
+    <Image
+      src={oficina}
+      alt="oficina"
+      width={1500}
+      height={500}
+      class="oficina"
+    />
+  </div>
+  <div class="TituloContainer">
+    <Rueda client:load />
+    <h1 class="titulo">
+      ¡NO HACEMOS MAGIA, <br />
+      <strong class="strong"> HACEMOS ESTRATEGIA! </strong>
+    </h1>
+  </div>
+  <div class="servicios">
+    {
+      servicio.map((servicio) => (
+        <div class="servicio">
+          <div class="servicio-img">
+            <servicio.img style={{ fontSize: 80 }} />
+          </div>
+          <h2>{servicio.title}</h2>
+        </div>
+      ))
+    }
+  </div>
+</main>
+
+<style>
+  .contenedor {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .oficina {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .contenedor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcfcfabb; /* transparente */
+    z-index: 1;
+    pointer-events: none;
+  }
+  .TituloContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .titulo {
+    font-family: "GothamBook", "Gotham", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    font-weight: 400;
+    color: #121619;
+
+    z-index: 2;
+  }
+  .strong {
+    font-family: "GothamBold", "Gotham", sans-serif;
+    font-weight: bold;
+
+    color: #000000;
+  }
+  .servicios {
+    padding: 50px 200px;
+    height: fit-content;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .servicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 190px;
+  }
+  .servicio-img {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .servicio-icon {
+    font-size: 1.5rem;
+  }
+  .servicio h2 {
+    font-family: "GothamBook", "Gotham", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    height: 40px;
+  }
+</style>
