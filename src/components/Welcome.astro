@@ -1,7 +1,9 @@
 ---
-import { Image } from "astro:assets";
+
 import Rueda from "../components/Rueda.jsx";
-import oficina from "../assets/oficina.JPG";
+import Logo from "../assets/tapeLogo.png"
+import curve from "../assets/curveHome.png"
+
 import { FaHeadphones, FaLaptopCode } from "react-icons/fa";
 import { IoIosPhonePortrait, IoMdFilm } from "react-icons/io";
 import { IoCamera } from "react-icons/io5";
@@ -64,97 +66,94 @@ const servicio = [
     img: GiLargePaintBrush,
   },
 ];
+
 ---
+{/*
+import CircleType from 'circletype';
+import { useEffect, useRef } from 'react';
+{
+  servicio.map((servicio, index) => {
+    const textRef = useRef(null);
+
+    useEffect(() => {
+      if (textRef.current) {
+        new CircleType(textRef.current).radius(80);
+      }
+    }, []);
+
+    return (
+      <div className="servicio" key={index}>
+        <div className="servicio-img">
+          <servicio.img style={{ fontSize: 70, color: "black" }} />
+        </div>
+        <h2 ref={textRef}>{servicio.title}</h2>
+      </div>
+    );
+  })
+}
+*/}
 
 <main>
   <div class="contenedor">
-    <Image
-      src={oficina}
-      alt="oficina"
-      width={1500}
-      height={500}
-      class="oficina"
-    />
+    
+    <div class="centro">
+      <img src={Logo.src} alt="logo" class="logoHome">
+      <Rueda client:load />
+    </div>
   </div>
-  <div class="TituloContainer">
-    <Rueda client:load />
-    <h1 class="titulo">
-      ¡NO HACEMOS MAGIA, <br />
-      <strong class="strong"> HACEMOS ESTRATEGIA! </strong>
-    </h1>
+  <div class="curveContainer">
+    <img src={curve.src} alt="curve" class="curveHome">
+    <h3>No hacemos <br> magia, hacemos <br> <strong>estrategia</strong>.</h3>
   </div>
   <div class="servicios">
     {
       servicio.map((servicio) => (
         <div class="servicio">
           <div class="servicio-img">
-            <servicio.img style={{ fontSize: 80 }} />
+            <servicio.img style={{ fontSize: 70, color: "black" }} />
           </div>
+          
           <h2>{servicio.title}</h2>
         </div>
       ))
     }
   </div>
+  <div>
+    
+
+  </div>
 </main>
+
+
 
 <style>
   .contenedor {
-    position: relative;
+    
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     overflow: hidden;
-  }
-
-  .oficina {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .contenedor::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fcfcfabb; /* transparente */
-    z-index: 1;
-    pointer-events: none;
-  }
-  .TituloContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    height: 100%;
+    background-color: #e1dbc9;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
+    align-items: flex-end;
+    
   }
-  .titulo {
-    font-family: "GothamBook", "Gotham", sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    font-weight: 400;
-    color: #121619;
+  .centro{
+    position: relative;
+    height: 700px;
+    width: 700px;
+    padding-right: 20px;
 
-    z-index: 2;
   }
-  .strong {
-    font-family: "GothamBold", "Gotham", sans-serif;
-    font-weight: bold;
-
-    color: #000000;
+  .logoHome{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   .servicios {
     padding: 50px 200px;
     height: fit-content;
-    background-color: red;
+    background-color: #d6101d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,16 +169,16 @@ const servicio = [
     width: 190px;
   }
   .servicio-img {
-    width: 100%;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    background-color: beige;
   }
-  .servicio-icon {
-    font-size: 1.5rem;
-  }
+  
   .servicio h2 {
     font-family: "GothamBook", "Gotham", sans-serif;
     font-weight: 400;
@@ -187,5 +186,34 @@ const servicio = [
     color: #ffffff;
     text-align: center;
     height: 40px;
+    transform: rotate(-10deg);
+  }
+  .curveContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .curveHome{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+  }
+  .curveContainer h3{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "GothamBold", "Gotham", sans-serif;
+    font-weight: 700;
+
+  }
+  strong{
+    color: #d6101d
   }
 </style>
