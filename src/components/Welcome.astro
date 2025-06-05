@@ -1,155 +1,134 @@
 ---
-
 import Rueda from "../components/Rueda.jsx";
-import Logo from "../assets/tapeLogo.png"
-import curve from "../assets/curveHome.png"
+import Logo from "../assets/tapeLogo.png";
+import curve from "../assets/curveHome.png";
 
-import { FaHeadphones, FaLaptopCode } from "react-icons/fa";
-import { IoIosPhonePortrait, IoMdFilm } from "react-icons/io";
-import { IoCamera } from "react-icons/io5";
-import {
-  MdDesignServices,
-  MdOutline360,
-  MdOutlineBrandingWatermark,
-  MdSlowMotionVideo,
-} from "react-icons/md";
-import { RiMegaphoneFill } from "react-icons/ri";
-import { GiCrafting, GiLargePaintBrush } from "react-icons/gi";
+import web from "../assets/iconos/web.tif.png";
+import redes from "../assets/iconos/redes.tif.png";
+import foto from "../assets/iconos/foto.tif.png";
+import grafico from "../assets/iconos/grafico.tif.png";
+import musica from "../assets/iconos/musica.tif.png";
+import pauta from "../assets/iconos/pauta.tif.png";
+import identidad from "../assets/iconos/identidad.tif.png";
+import film from "../assets/iconos/film.tif.png";
+import video from "../assets/iconos/video.tif.png";
+import creativo from "../assets/iconos/creativo.tif.png";
 
 const servicio = [
   {
     title: "DESARROLLO WEB",
-    img: FaLaptopCode,
+    iconName: web.src,
   },
   {
     title: "REDES SOCIALES",
-    img: IoIosPhonePortrait,
+    iconName: redes.src,
   },
   {
     title: "FOTOGRAFIA",
-    img: IoCamera,
+    iconName: foto.src,
   },
   {
     title: "RECORRIDO 360",
-    img: MdOutline360,
+    iconName: grafico.src,
   },
   {
     title: "DISEÑO GRÁFICO",
-    img: MdDesignServices,
+    iconName: grafico.src,
   },
   {
     title: "MUSICALIZACIÓN",
-    img: FaHeadphones,
+    iconName: musica.src,
   },
   {
     title: "PAUTA PUBLICITARIA",
-    img: RiMegaphoneFill,
+    iconName: pauta.src,
   },
   {
     title: "CONTENT CREATOR",
-    img: GiCrafting,
+    iconName: identidad.src,
   },
   {
     title: "IDENTIDAD DE MARCA",
-    img: MdOutlineBrandingWatermark,
+    iconName: identidad.src,
   },
   {
     title: "FILMAKER",
-    img: IoMdFilm,
+    iconName: film.src,
   },
   {
     title: "EDITOR DE VIDEOS",
-    img: MdSlowMotionVideo,
+    iconName: video.src,
   },
   {
     title: "DEPTO.CREATIVO",
-    img: GiLargePaintBrush,
+    iconName: creativo.src,
   },
 ];
-
 ---
-{/*
-import CircleType from 'circletype';
-import { useEffect, useRef } from 'react';
-{
-  servicio.map((servicio, index) => {
-    const textRef = useRef(null);
-
-    useEffect(() => {
-      if (textRef.current) {
-        new CircleType(textRef.current).radius(80);
-      }
-    }, []);
-
-    return (
-      <div className="servicio" key={index}>
-        <div className="servicio-img">
-          <servicio.img style={{ fontSize: 70, color: "black" }} />
-        </div>
-        <h2 ref={textRef}>{servicio.title}</h2>
-      </div>
-    );
-  })
-}
-*/}
 
 <main>
   <div class="contenedor">
-    
     <div class="centro">
-      <img src={Logo.src} alt="logo" class="logoHome">
+      <img src={Logo.src} alt="logo" class="logoHome" />
       <Rueda client:load />
     </div>
   </div>
   <div class="curveContainer">
-    <img src={curve.src} alt="curve" class="curveHome">
-    <h3>No hacemos <br> magia, hacemos <br> <strong>estrategia</strong>.</h3>
+    <img src={curve.src} alt="curve" class="curveHome" />
+    <h3>
+      No hacemos <br /> magia, hacemos <br />
+      <strong>estrategia</strong>.
+    </h3>
   </div>
   <div class="servicios">
     {
-      servicio.map((servicio) => (
+      servicio.map((icono, index) => (
         <div class="servicio">
           <div class="servicio-img">
-            <servicio.img style={{ fontSize: 70, color: "black" }} />
+            <img src={icono.iconName} alt={icono.title} />
           </div>
-          
-          <h2>{servicio.title}</h2>
+          <div class="servicio-svg">
+            <svg width="280" height="180">
+              <path
+                id="curve"
+                d="M 100,100 m -70,-4 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+              />
+              <text>
+                <textPath class="text_path" href="#curve" startOffset="1%">
+                  {icono.title}
+                </textPath>
+              </text>
+            </svg>
+          </div>
         </div>
       ))
     }
   </div>
-  <div>
-    
-
-  </div>
+  <div></div>
 </main>
-
-
 
 <style>
   .contenedor {
-    
     width: 100%;
     height: 80vh;
     overflow: hidden;
-    background-color: #e1dbc9;
+    background-color: #fff9ea;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
   }
-  .centro{
+  .centro {
     position: relative;
     height: 700px;
     width: 700px;
     padding-right: 20px;
-
   }
-  .logoHome{
+  .logoHome {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   .servicios {
     padding: 50px 200px;
     height: fit-content;
@@ -160,13 +139,27 @@ import { useEffect, useRef } from 'react';
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .servicio {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: fit-content;
     width: 190px;
+    height: 190px;
+  }
+  .servicio-svg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 205px;
   }
   .servicio-img {
     width: 120px;
@@ -178,17 +171,22 @@ import { useEffect, useRef } from 'react';
     color: white;
     background-color: beige;
   }
-  
-  .servicio h2 {
-    font-family: "GothamBook", "Gotham", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-    height: 40px;
-    transform: rotate(-10deg);
+  .servicio-img img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
   }
-  .curveContainer{
+  .text_path {
+    font-family: "Archivo-Bold", sans-serif;
+
+    font-size: 1rem;
+    fill: white;
+  }
+  #curve {
+    fill: transparent;
+  }
+
+  .curveContainer {
     position: relative;
     height: 100%;
     width: 100%;
@@ -196,24 +194,21 @@ import { useEffect, useRef } from 'react';
     justify-content: center;
     align-items: center;
   }
-  .curveHome{
+  .curveHome {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.05);
   }
-  .curveContainer h3{
+  .curveContainer h3 {
     z-index: 2;
     position: absolute;
     top: 0;
     bottom: 0;
     text-align: center;
     font-size: 1.5rem;
-    font-family: "GothamBold", "Gotham", sans-serif;
-    font-weight: 700;
-
+    font-family: "Archivo-SemiBold", sans-serif;
   }
-  strong{
-    color: #d6101d
+  strong {
+    color: #d6101d;
   }
 </style>
