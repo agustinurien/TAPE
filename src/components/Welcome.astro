@@ -6,9 +6,11 @@ import curve from "../assets/curveHome.png";
 import web from "../assets/iconos/web.tif.png";
 import redes from "../assets/iconos/redes.tif.png";
 import foto from "../assets/iconos/foto.tif.png";
+import tres from "../assets/iconos/360.tif.png";
 import grafico from "../assets/iconos/grafico.tif.png";
 import musica from "../assets/iconos/musica.tif.png";
 import pauta from "../assets/iconos/pauta.tif.png";
+import content from "../assets/iconos/content.tif.png";
 import identidad from "../assets/iconos/identidad.tif.png";
 import film from "../assets/iconos/film.tif.png";
 import video from "../assets/iconos/video.tif.png";
@@ -29,7 +31,7 @@ const servicio = [
   },
   {
     title: "RECORRIDO 360",
-    iconName: grafico.src,
+    iconName: tres.src,
   },
   {
     title: "DISEÑO GRÁFICO",
@@ -45,7 +47,7 @@ const servicio = [
   },
   {
     title: "CONTENT CREATOR",
-    iconName: identidad.src,
+    iconName: content.src,
   },
   {
     title: "IDENTIDAD DE MARCA",
@@ -160,6 +162,14 @@ const servicio = [
     right: 0;
     height: 100%;
     width: 205px;
+
+    transition: transform 1s ease;
+    transform-origin: center center;
+    background-color: black;
+    opacity: 0.8;
+  }
+  .servicio:hover .servicio-svg {
+    transform: rotate(360deg);
   }
   .servicio-img {
     width: 120px;
@@ -183,7 +193,8 @@ const servicio = [
     fill: white;
   }
   #curve {
-    fill: transparent;
+    fill: black;
+    opacity: 0;
   }
 
   .curveContainer {
