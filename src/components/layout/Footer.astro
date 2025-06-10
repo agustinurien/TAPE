@@ -1,0 +1,362 @@
+---
+import { IoLogoWhatsapp } from "react-icons/io5";
+import fondoCrear from "../../assets/ruedaContorno.png";
+import tape from "../../assets/tapeFooter.png";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
+---
+
+<footer>
+  <div class="crear">
+    <div class="contenedorFondo">
+      <img src={fondoCrear.src} alt="" class="fondoCrear" />
+    </div>
+    <h2>¿Listo para crear?</h2>
+
+    <div class="contentCrear">
+      <div class="formularioContenedor">
+        <h4>¿Cómo empezamos <br />una colaboración?</h4>
+        <button class="formularioButton">FORMULARIO</button>
+      </div>
+      <p>
+        <strong>Rellena el formulario</strong> de comentarios <br /> o <strong
+          >escribinos por Whatsapp.</strong
+        >
+        <br />
+        Contanos brevemente sobre vos y tu <br />solicitud. Entendemos que a
+        veces <br />es difícil expresarlo con palabras, así <br />que si quieres
+        charlar, no dudes en decirlo. Quizás una conversación te inspire para
+        colaborar. <br /><br />
+        Programaremos una llamada o hablaremos de los detalles por <br
+        />escrito, lo que te resulte <br />más cómodo.
+      </p>
+    </div>
+  </div>
+  <div class="idea">
+    <p>
+      Contanos tu idea, tu <strong>marca</strong> o tu <strong>ptoyecto</strong
+      >. <br />En <strong>TAPE</strong>, lo transformamos en algo que <br
+      />funcione.
+    </p>
+  </div>
+  <div class="contacto">
+    <a href="/" class="icon"><IoLogoWhatsapp /></a>
+    <a href="/" class="texto">CONTACTANOS</a>
+  </div>
+  <div class="blackSection">
+    <div class="explore">
+      <h3>Seguí explorando...</h3>
+    </div>
+    <div class="blackSectionText">
+      <ul>
+        <li>Servicios</li>
+        <li>Nuestros trabajos</li>
+        <li>Nosotros</li>
+        <li>Valores</li>
+        <li>Formulario</li>
+        <li>Preguntas frecuentes</li>
+      </ul>
+    </div>
+  </div>
+  <div class="socialsContainer">
+    <div class="socials">
+      <a href="https://www.instagram.com/tape.agencia/" target="_blank"
+        ><FaInstagram /></a
+      >
+      <a href="https://www.linkedin.com/company/tape-agencia/" target="_blank">
+        <FaFacebookF />
+      </a>
+      <a href="https://www.facebook.com/tape.agencia" target="_blank"
+        ><FaLinkedinIn /></a
+      >
+      <p>Seguinos</p>
+    </div>
+    <div class="copy">
+      <div class="contactar">
+        <p>Contactar</p>
+        <a href="/"><FaWhatsapp /></a>
+      </div>
+
+      <div class="copyText">
+        <p>Copyright © 2025</p>
+        <div class="copyTextImg">
+          <img src={tape.src} alt="" class="imgTape" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: #fff9ea;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .crear {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+    width: 100%;
+    padding-top: 90px;
+  }
+  .contenedorFondo {
+    position: absolute;
+    width: 1100px;
+    height: 1100px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fondoCrear {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .crear h2 {
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    margin: 0;
+    padding: 25px 0px;
+    width: 550px;
+  }
+
+  .contentCrear {
+    width: 550px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .formularioContenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 300px;
+    gap: 20px;
+  }
+  .formularioContenedor h4 {
+    font-family: "Archivo-SemiBold", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #d6101d;
+  }
+  .formularioButton {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+    color: #fff9ea;
+    background-color: #d6101d;
+    font-family: "Archivo-SemiBold", sans-serif;
+    cursor: pointer;
+  }
+  .contentCrear p {
+    width: 100%;
+    font-family: "Archivo-Regular", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #000;
+    margin: 0px;
+  }
+  .contentCrear p strong {
+    font-family: "Archivo-SemiBold", sans-serif;
+  }
+
+  .idea {
+    text-align: center;
+    font-size: 1.7rem;
+    font-family: "Archivo-Bold", sans-serif;
+  }
+  .idea strong {
+    color: #d6101d;
+  }
+  .contacto {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 10px;
+  }
+  .contacto a {
+    background-color: #13171a;
+    border-radius: 20px;
+    color: #fff9ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacto .icon {
+    background-color: #13171a;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+  }
+  .contacto .texto {
+    font-family: "Archivo-SemiBold", sans-serif;
+    font-size: 1.2rem;
+    padding: 0px 50px;
+    color: #fff9ea;
+    text-decoration: none;
+    border-radius: 25px;
+  }
+  .blackSection {
+    margin-top: 70px;
+
+    padding: 80px 0px;
+    background-color: #13171a;
+    width: 100%;
+    height: 400px;
+    display: flex;
+  }
+  .explore {
+    width: 30%;
+    height: 200px;
+  }
+  .explore h3 {
+    padding-left: 70px;
+    color: #fff9ea;
+    margin: 0px;
+    font-family: "Archivo-Regular", sans-serif;
+  }
+  .blackSectionText ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+  }
+  .blackSectionText ul li {
+    font-size: 2.8rem;
+    list-style: none;
+    font-family: "Archivo-Regular", sans-serif;
+
+    color: #fff9ea;
+  }
+  .socialsContainer {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 200px;
+    background-color: #13171a;
+    padding-top: 80px;
+  }
+  .socialsContainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 1px;
+    background-color: #fff9ea;
+  }
+  .socials {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+    height: 100px;
+
+    padding-left: 70px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  .socials p {
+    font-family: "Archivo-SemiBold", sans-serif;
+    font-size: 1.2rem;
+    color: #fff9ea;
+    margin: 0px;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
+  .socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff9ea;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    color: #000000;
+    margin: 0px;
+    font-size: 1.4rem;
+  }
+  .copy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #13171a;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .contactar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+
+    padding-top: 10px;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+  .contactar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff9ea;
+    width: 45px;
+    height: 45px;
+    background-color: #fff9ea00;
+    border-radius: 100%;
+    border: 2px solid #fff9ea;
+    font-size: 2rem;
+  }
+  .contactar p {
+    font-family: "Archivo-SemiBold", sans-serif;
+    font-size: 1.2rem;
+    color: #fff9ea;
+    margin: 0px;
+  }
+  .copyText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    color: #fff9ea;
+    font-family: "Archivo-Regular", sans-serif;
+    font-size: 1.2rem;
+  }
+  .copyTextImg {
+    padding-left: 50px;
+    height: 70%;
+    width: 50%;
+  }
+  .imgTape {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>

@@ -1,0 +1,213 @@
+---
+import Rueda from "./Rueda";
+import Logo from "../assets/tapeLogo.png";
+---
+
+<div class="contenedor">
+  <div class="valoresContenedor">
+    <div class="tituloValores">
+      <h2>Nuestros Valores</h2>
+    </div>
+    <div class="valores">
+      <div class="valoresIntro">
+        <p>
+          En TAPE creemos que el diseño no es solo estética, es una herramienta
+          para conectar, emocionar y generar resultados.Trabajamo s con 4
+          principios que nos definen:
+        </p>
+      </div>
+      <div>
+        <p>
+          Pensamiento estratégico: cada proyecto tiene un objetivo, no diseñamos
+          porque sí.
+        </p>
+      </div>
+      <div>
+        <p>
+          Creatividad simple y efectiva: buscamos ideas frescas, claras, que
+          comuniquen de verdad.
+        </p>
+      </div>
+      <div>
+        <p>
+          Compromiso real con cada cliente: nos involucramos en cada proyecto
+          como si fuera propio.
+        </p>
+      </div>
+      <div>
+        <p>
+          Trabajo artesanal: cuidamos los detalles, los procesos y el resultado
+          final.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="diferenciaContenedor">
+    <div class="centro">
+      <img src={Logo.src} alt="logo" class="logoHome" />
+      <Rueda client:load />
+    </div>
+    <div class="valoresContenedor">
+      <div class="tituloValores">
+        <h2>Lo que nos diferencia</h2>
+      </div>
+      <div class="valores">
+        <div class="valoresIntro">
+          <p>
+            Somos una agencia de diseño, pero también de producción y ejecución.
+            Nos importa que las ideas lleguen a la calle, que funcionen en
+            redes, en un video o en una identidad completa.
+          </p>
+        </div>
+        <div>
+          <p>
+            Mientras otros te entregan "un diseño", nosotros pensamos en cómo
+            ese diseño va a vivir y conectar con tu público.
+          </p>
+        </div>
+        <div>
+          <p>
+            No tercerizamos lo esencial. Acá, el equipo que piensa, diseña,
+            edita y produce es el mismo que te acompaña en todo el proceso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dudas">
+    <h3>¿Tenés dudas?</h3>
+    <h4>¡Mirá el apartado de <br /> <strong>preguntas frecuentes!</strong></h4>
+    <button class="dudasButton">FAQ</button>
+  </div>
+</div>
+
+<style>
+  .contenedor {
+    background-color: #fff9ea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+  .valoresContenedor {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .tituloValores {
+  }
+  .tituloValores h2 {
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    font-size: 3.6rem;
+    margin: 0;
+    padding: 35px 0px;
+  }
+  .valores {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
+  .valores div {
+    position: relative;
+    height: 215px;
+    width: 240px;
+  }
+  .valores div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 5px;
+    background-color: #d6101d;
+  }
+  .valores .valoresIntro {
+    position: relative;
+  }
+  .valores .valoresIntro::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16%;
+    transform: translateX(-50%);
+    width: 35%;
+    height: 4px;
+    background-color: #fff9ea;
+  }
+  .valores div p {
+    font-size: 1.2rem;
+    width: 80%;
+    font-family: "Archivo-Regular", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+  }
+  .diferenciaContenedor {
+    width: 70%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .centro {
+    position: relative;
+    height: 100%;
+    width: 30%;
+  }
+  .logoHome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-2.05%);
+    object-fit: contain;
+  }
+  .dudas {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #e3dccb;
+  }
+  .dudas h3 {
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    margin: 0;
+    padding: 30px 0px;
+    padding-bottom: 15px;
+  }
+  .dudas h4 {
+    font-family: "Archivo-SemiBold", sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0px;
+  }
+  strong {
+    font-family: "Archivo-SemiBold", sans-serif;
+    color: #d6101d;
+  }
+  .dudasButton {
+    height: 40px;
+    width: 140px;
+    margin: 25px 0px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    background-color: #d6101d;
+    font-family: "Archivo-SemiBold", sans-serif;
+    cursor: pointer;
+  }
+</style>
