@@ -96,6 +96,9 @@
   object-fit: contain;
 }
 .portfolioButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   width: fit-content;
   margin-top: 30px;
@@ -107,4 +110,5 @@
   background-color: #d6101d;
   font-family: "Archivo-SemiBold", sans-serif;
   cursor: pointer;
+  text-decoration: none;
 }

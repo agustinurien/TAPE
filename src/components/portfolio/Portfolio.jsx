@@ -40,7 +40,10 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <button className="portfolioButton">VER PORTFOLIO</button>
+
+      <a href="/portfolio/Portfolio" className="portfolioButton">
+        VER PORTFOLIO
+      </a>
     </div>
   );
 };
