@@ -1,0 +1,180 @@
+---
+import FaqComponente from "../../components/faq/FaqComponente";
+import Layout from "../../layouts/Layout.astro";
+import tapeSolo from "../../assets/tapeSolo.png";
+import ruedaSolo from "../../assets/ruedaSolo.png";
+import logoFaq from "../../assets/logoFaq.png";
+import logo2Faq from "../../assets/logo2Faq.png";
+---
+
+<Layout>
+  <div class="FAQHeader">
+    <h1>Preguntas Frecuentes (FAQ)</h1>
+  </div>
+  <div class="contenedorFaqs">
+    <FaqComponente client:load />
+  </div>
+
+  <div class="logoHeader">
+    <h1>Cómo se llaman las <br /> distintas partes de un logo</h1>
+  </div>
+  <div class="logoContent">
+    <p class="logoContentText">
+      En diseño, muchas veces usamos palabras diferentes que pueden confundir.
+      Te lo explicamos simple:
+    </p>
+
+    <div class="explicacionContainer">
+      <div class="explicacion">
+        <div>
+          <p><strong>Logotipo:</strong> cuando el logo es solo texto.</p>
+        </div>
+        <div class="explicacionImg">
+          <img src={tapeSolo.src} alt="Partes de un logo" />
+        </div>
+      </div>
+      <div class="explicacion">
+        <div>
+          <p><strong>Isotipo:</strong> el símbolo sin texto.</p>
+        </div>
+        <div class="explicacionImg">
+          <img src={ruedaSolo.src} alt="Partes de un logo" />
+        </div>
+      </div>
+      <div class="explicacion">
+        <div>
+          <p>
+            <strong>Imagotipo:</strong> cuando texto y símbolo conviven pero pueden
+            separarse
+          </p>
+        </div>
+        <div class="explicacionImg">
+          <img src={logoFaq.src} alt="Partes de un logo" />
+        </div>
+      </div>
+      <div class="explicacion">
+        <div>
+          <p>
+            <strong>Isologo:</strong> cuando el texto y el símbolo están fusionados
+            y no pueden separarse
+          </p>
+        </div>
+        <div class="explicacionImg">
+          <img src={logo2Faq.src} alt="Partes de un logo" />
+        </div>
+      </div>
+    </div>
+    <p class="logoContentText">
+      En TAPE usamos estos términos según cada proyecto, pero siempre pensando
+      en lo más funcional para tu marca.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .FAQHeader {
+    margin-top: 97px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+
+    background-color: #fff9ea;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid #e2dbca;
+  }
+  .FAQHeader h1 {
+    font-size: 3.5rem;
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    margin: 0;
+    text-align: center;
+  }
+  .logoHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+
+    background-color: #fff9ea;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid #e2dbca;
+    border-top: 2px solid #e2dbca;
+  }
+  .logoHeader h1 {
+    font-size: 3.5rem;
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    margin: 0;
+
+    width: 850px;
+  }
+  .contenedorFaqs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff9ea;
+    gap: 20px;
+  }
+
+  .explicacionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+  .logoContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff9ea;
+  }
+  .logoContent .logoContentText {
+    font-family: "Archivo-Regular", sans-serif;
+    font-size: 2.4rem;
+    margin: 0px;
+    width: 850px;
+    padding: 50px 0px;
+  }
+  .explicacion {
+    height: 450px;
+    width: 300px;
+    background-color: #fff9ea;
+    border: 3px solid #d6101d;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+  .explicacion p {
+    font-family: "Archivo-Regular", sans-serif;
+    font-size: 1.9rem;
+    line-height: 1;
+    color: #000;
+    margin: 0px;
+    padding: 25px;
+    padding-top: 20px;
+  }
+  .explicacion p strong {
+    color: #d6101d;
+  }
+  .explicacionImg {
+    border-top: 3px solid #d6101d;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .explicacionImg img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+</style>

@@ -1,0 +1,26 @@
+.contenedorPreguntas {
+  width: 850px;
+}
+.preguntaFrecuente {
+  padding-bottom: 20px;
+}
+.preguntaFrecuente p {
+  padding: 20px 0px;
+  width: 90%;
+  font-size: 2.4rem;
+  color: #333;
+  margin: 0px;
+  font-family: "Archivo-Regular", sans-serif;
+}
+.pregunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.tituloPregunta {
+  color: #d6101d;
+  margin: 0px;
+  font-size: 2rem;
+  font-family: "Archivo-Bold", sans-serif;
+}

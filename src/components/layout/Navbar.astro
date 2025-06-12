@@ -18,11 +18,16 @@ import {
     </div>
     <div class="linksContainer">
       <ul class="nav-links">
-        <li><a href="/">QUIÉNES SOMOS</a></li>
-        <li><a href="/about">SERVICIOS</a></li>
-        <li><a href="/contact">PORTFOLIO</a></li>
-        <li><a href="/contact">FAQ</a></li>
-        <li><a href="/contact">CONTACTO</a></li>
+        <li><a href="/#QuienesSomos">QUIÉNES SOMOS</a></li>
+        <li><a href="/#Servicios">SERVICIOS</a></li>
+        <li><a href="/portfolio/Portfolio">PORTFOLIO</a></li>
+        <li><a href="/FAQ/Faq">FAQ</a></li>
+        <li>
+          <a
+            href="#"
+            onclick="window.dispatchEvent(new Event('abrirFormulario'))"
+            >CONTACTO</a>
+        </li>
       </ul>
       <ul class="social-links">
         <li><a href=""><FaInstagram /></a></li>
@@ -49,6 +54,7 @@ import {
   }
 
   nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
