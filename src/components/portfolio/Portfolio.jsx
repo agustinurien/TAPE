@@ -5,7 +5,7 @@ import portfolio2 from "../../assets/portfolio2.png";
 import portfolio3 from "../../assets/portfolio3.png";
 import portfolio4 from "../../assets/portfolio4.png";
 import portfolio5 from "../../assets/portfolio1.png";
-import cassete from "../../assets/cassettePortfolio.png";
+import cassete from "../../assets/cassete.png";
 
 const Portfolio = () => {
   return (
