@@ -1,26 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import fondoPortfolio from "../../assets/fondoPortfolio.jpg";
-import cassettePortfolio from "../../assets/cassette2.png"
+import cassettePortfolio from "../../assets/cassettePortfolio.png";
+import PortfolioIsland from "../../components/PortfolioIslands.jsx";
 ---
 
 <Layout>
   <div class="headerPortfolio">
     <div class="nubesContainer">
-      <img src={fondoPortfolio.src} alt="" class="imgPortfolio">
+      <img src={fondoPortfolio.src} alt="" class="imgPortfolio" />
     </div>
     <div class="cassette">
-      <img src={cassettePortfolio.src} alt="" class="imgCassette">
+      <img src={cassettePortfolio.src} alt="" class="imgCassette" />
     </div>
     <div class="tituloPortfolio">
-      <h1>PROYECTOS <br> REALIZADOS</h1>
+      <h1>PROYECTOS <br /> REALIZADOS</h1>
     </div>
     <div class="border"></div>
   </div>
+
+  <PortfolioIsland client:load />
 </Layout>
 
 <style>
-  .headerPortfolio{
+  .headerPortfolio {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -31,96 +34,80 @@ import cassettePortfolio from "../../assets/cassette2.png"
     margin-top: 97px;
     overflow: hidden;
   }
-  .nubesContainer{
+  .nubesContainer {
     position: absolute;
-  top: -100px; /* Empieza un poco arriba para dar efecto de "subida" */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: auto;
-  animation: bajarNubes 1.5s ease forwards;
+    top: -100px; /* Empieza un poco arriba para dar efecto de "subida" */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    animation: bajarNubes 1.5s ease forwards;
   }
   @keyframes bajarNubes {
-  0% {
-    top: -100px;
-    
+    0% {
+      top: -100px;
+    }
+    100% {
+      top: 50%;
+      transform: translate(-50%, -95%);
+    }
   }
-  100% {
-    top: 50%;
-    transform: translate(-50%, -95%);
-    
-  }
-}
-  .imgPortfolio{
+  .imgPortfolio {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
   }
-  
-  .cassette{
+
+  .cassette {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 2;
-    height: 90%;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    transform: translate(-20%, 4.5%);
-    transform: translate(0%, -30%);
-    
+    transform: translate(-3.5%, -35%);
   }
-  .imgCassette{
+  .imgCassette {
     width: auto;
     height: 100%;
     object-fit: contain;
-    
-    animation: 1s aparecer ease forwards;
-    transform: rotate();
-  }
-  @keyframes moverCassette {
-  0% {
-    left: -100px;
-    
-  }
-  100% {
-    transform: translate(293%);
-    
-  }
-}
-  @keyframes aparecer {
-  0% {
-    opacity: 0;
-    
-  }
-  100% {
-    transform: translate(0%, 35%);
-    opacity: 1;
-  }
-}
-  .tituloPortfolio {
-  display: flex;
-  align-items: flex-end;
-  height: 310px;
-  background-color: #d6101d;
-  overflow: hidden;
-  z-index: 1;
-  padding-left: 10px;
-}
 
-.tituloPortfolio h1 {
-  font-size: clamp(2rem, 10vw, 10rem);
-  line-height: 0.9;
-  color: white;
-  margin: 0px;
-  font-family: "AntiqueOlive-Nord", sans-serif;
+    animation: 1s aparecer ease forwards;
+  }
+
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%, 35%);
+      opacity: 1;
+    }
+  }
+  .tituloPortfolio {
+    display: flex;
+    align-items: flex-end;
+    height: 310px;
+    background-color: #d6101d;
+    overflow: hidden;
+    z-index: 1;
+    padding-left: 10px;
+  }
+
+  .tituloPortfolio h1 {
+    font-size: clamp(2rem, 10vw, 10rem);
+    line-height: 0.9;
+    color: white;
+    margin: 0px;
+    font-family: "AntiqueOlive-Nord", sans-serif;
     font-weight: 900;
-}
-  .border{
+  }
+  .border {
     background-color: white;
     height: 20px;
-    width: 100%; 
+    width: 100%;
     z-index: 1;
   }
 </style>

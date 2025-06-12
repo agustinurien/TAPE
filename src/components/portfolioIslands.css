@@ -1,0 +1,47 @@
+.navContainer {
+  padding: 20px 0px;
+}
+.navPortfolio {
+  display: flex;
+  justify-content: center;
+}
+.navPortfolio ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 1200px;
+}
+.navPortfolio ul li {
+  background-color: #ffffff;
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.navPortfolio ul .active {
+  background-color: #d6101d;
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.navPortfolio ul .active button {
+  color: white;
+}
+.navPortfolio ul li button {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Archivo-SemiBold", sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
