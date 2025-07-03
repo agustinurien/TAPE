@@ -3,8 +3,203 @@
   top: 0;
   left: 0;
   z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+
   background-color: green;
   height: 100vh;
   width: 100%;
   margin-top: 97px;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.close {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: flex-end;
+}
+.close button {
+  background-color: black;
+  color: white;
+  border: none;
+  width: 200px;
+  font-size: 1.5rem;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: violet;
+  height: 84%;
+}
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 75%;
+  padding: 25px;
+}
+form .submit {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(134, 238, 130);
+}
+form .submit .foto {
+  height: 200px;
+  width: 100px;
+  background-color: red;
+}
+form label {
+  font-size: 2rem;
+}
+.campo {
+  height: fit-content;
+}
+.campo h2 {
+  margin: 0px;
+}
+.nombre {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.nombre label {
+}
+.nombre input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.profesion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.profesion label {
+}
+.profesion input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.razon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.razon label {
+}
+.razon input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.llegue {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.llegue label {
+}
+.llegue input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.resumen label {
+  width: 300px;
+}
+.resumen textarea {
+  background-color: transparent;
+
+  height: 200px;
+  width: 100%;
+  border: 2px solid black;
+}
+.resumen div {
+  width: 90%;
+}
+.datos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.datos label {
+}
+.datos input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.email {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+
+  width: 100%;
+}
+.email input {
+  background-color: transparent;
+
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
