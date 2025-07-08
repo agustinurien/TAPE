@@ -15,7 +15,7 @@ import capital from "../assets/proyectos/capital.jpg";
 import amalia from "../assets/proyectos/amalia.jpg";
 import jpu from "../assets/proyectos/jpu.jpg";
 import calello from "../assets/proyectos/calello.jpg";
-import refmaster from "../assets/proyectos/REFMASTER.jpg";
+import refmaster from "../assets/proyectos/refmaster.jpg";
 import martin from "../assets/proyectos/martin.jpg";
 import garabi from "../assets/proyectos/garabi.jpg";
 import pantea from "../assets/proyectos/pantea.jpg";
