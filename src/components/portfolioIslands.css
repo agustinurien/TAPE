@@ -70,11 +70,13 @@
 .proyectoTitulo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 10%;
+  width: 100%;
 }
 .proyecto h2 {
   margin: 0px;
-  padding-left: 20px;
+  padding-left: 10px;
   font-family: "Archivo-Regular", sans-serif;
   font-size: 1rem;
   color: #000000;
@@ -95,4 +97,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.proyectoTitulo a {
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.descargar {
+  display: flex;
+}
+.descargar .descargarLink {
+  width: fit-content;
+  padding: 0px 10px;
+  border-radius: 20px;
+  font-family: "Archivo-SemiBold", sans-serif;
+  font-size: 0.8rem;
+}
+.descargar a {
+  background-color: red;
 }

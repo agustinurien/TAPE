@@ -7,17 +7,17 @@
   display: flex;
   flex-direction: column;
 
-  background-color: green;
   height: 100vh;
   width: 100%;
   margin-top: 97px;
   animation: slideIn 0.5s ease forwards;
+  background-color: #fff9e8;
 }
 
 .close {
   width: 100%;
-  height: 50px;
-  background-color: red;
+  height: 40px;
+  border-bottom: 2px solid #e2dcc8;
   display: flex;
   justify-content: flex-end;
 }
@@ -25,165 +25,334 @@
   background-color: black;
   color: white;
   border: none;
-  width: 200px;
-  font-size: 1.5rem;
+  width: 180px;
+  font-size: 1rem;
+  font-family: "Archivo-Bold", sans-serif;
+}
+.close button strong {
+  font-family: "Archivo-Black", sans-serif;
 }
 form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: violet;
+
   height: 84%;
 }
 .formContent {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 75%;
-  padding: 25px;
+  width: 70%;
+  padding: 25px 80px;
+  border-right: 2px solid #e2dcc8;
 }
 form .submit {
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
+  gap: 50px;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: rgb(134, 238, 130);
+  justify-content: flex-start;
+  align-items: center;
 }
 form .submit .foto {
-  height: 200px;
-  width: 100px;
+  height: 400px;
+  width: 100%;
+}
+form .submit .foto img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+form .submit .contacto {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+  width: 70%;
+}
+form .submit .contacto h3 {
+  margin: 0px;
+  font-family: "Archivo-Regular", sans-serif;
+  white-space: nowrap;
+}
+form .submit .contacto h3 strong {
+  color: red;
+}
+.buttonEnviar {
+  margin-top: 40px;
+  width: 70%;
+}
+.buttonEnviar button {
+  height: 40px;
+  width: 125px;
   background-color: red;
+  border: none;
+  border-radius: 25px;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 form label {
   font-size: 2rem;
+  font-family: "Archivo-Regular", sans-serif;
 }
 .campo {
   height: fit-content;
+  height: 50px;
 }
 .campo h2 {
   margin: 0px;
 }
 .nombre {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
-
   width: 100%;
 }
-.nombre label {
-}
-.nombre input {
-  background-color: transparent;
 
+.nombreContent {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  padding-right: 20px;
+}
+
+.nombre label {
+  width: 305px;
+  white-space: nowrap;
+}
+
+.nombre input {
+  flex: 1; /* Esto permite que el input se achique */
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #e2dcc8;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #e2dcc8;
 }
 .profesion {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
-
   width: 100%;
 }
-.profesion label {
-}
-.profesion input {
-  background-color: transparent;
 
+.profesionContent {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  padding-right: 20px;
+}
+
+.profesion label {
+  width: 105px;
+  white-space: nowrap;
+}
+
+.profesion input {
+  flex: 1; /* Esto permite que el input se achique */
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #e2dcc8;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
 }
 .razon {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
-
   width: 100%;
 }
-.razon label {
+.razonContent {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  padding-right: 20px;
 }
-.razon input {
+.razon label {
+  width: 565px;
+  white-space: nowrap;
+}
+.razon .selectContenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: transparent;
 
+  flex: 1; /* Esto permite que el input se achique */
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
 }
+.razon .selectContenedor h2 {
+  color: #e2dcc8;
+}
+.razon .selectContenedor select {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
+}
+
 .llegue {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
 
   width: 100%;
 }
-.llegue label {
+.llegueContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  padding-right: 20px;
 }
-.llegue input {
+.llegue .selectContenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: transparent;
 
+  flex: 1; /* Esto permite que el input se achique */
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
+}
+.llegue .selectContenedor h2 {
+  color: #e2dcc8;
+}
+.llegue .selectContenedor select {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
 }
 .resumen {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
+  height: fit-content;
 
   width: 100%;
 }
+.resumenContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+
+  padding-right: 40px;
+}
 .resumen label {
-  width: 300px;
+  width: 22%;
+  white-space: nowrap;
 }
 .resumen textarea {
   background-color: transparent;
-
-  height: 200px;
+  border: none;
   width: 100%;
-  border: 2px solid black;
+  height: 200px;
+  resize: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  line-height: 3.1rem;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 48px,
+    /* espacio entre líneas */ rgba(0, 0, 0, 0.2) 22px,
+    rgba(0, 0, 0, 0.2) 49px
+  );
+  background-size: 100% 100%;
 }
-.resumen div {
-  width: 90%;
+.resumen textarea:focus {
+  outline: none;
+  box-shadow: none;
 }
+
 .datos {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
 
   width: 100%;
 }
+.datosContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+
+  padding-right: 20px;
+}
 .datos label {
+  width: 330px;
+  white-space: nowrap;
 }
 .datos input {
-  background-color: transparent;
-
+  flex: 1; /* Esto permite que el input se achique */
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #e2dcc8;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
 }
 .email {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
 
   width: 100%;
 }
+.emailContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+
+  padding-right: 20px;
+  gap: 10px;
+}
 .email input {
   background-color: transparent;
-
+  width: 100%;
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #e2dcc8;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Archivo-SemiBold", sans-serif;
+}
+.saludo {
+  display: flex;
+
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.saludo p {
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Archivo-Regular", sans-serif;
 }
 
 @keyframes slideIn {
