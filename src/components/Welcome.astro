@@ -221,4 +221,35 @@ const servicio = [
   strong {
     color: #d6101d;
   }
+  @media screen and (max-width: 1250px) {
+    .contenedor {
+      height: 60vh;
+    }
+    .centro {
+      width: 75%;
+      height: 500px;
+      padding-right: 15px;
+    }
+    .logoHome {
+      width: 100%;
+      height: 100%;
+      transform: translateX(0%);
+    }
+    .curveContainer h3 {
+      font-size: 1.2rem;
+      margin: 0px;
+      transform: translateY(5%);
+    }
+    .servicios {
+      padding: 0px 0px;
+      padding-bottom: 40px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .curveContainer h3 {
+      font-size: 1.2rem;
+      margin: 0px;
+      transform: translateY(-35%);
+    }
+  }
 </style>

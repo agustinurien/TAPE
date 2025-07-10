@@ -43,17 +43,17 @@ import Logo from "../assets/tapeLogo.png";
     </div>
   </div>
 
-  <div class="diferenciaContenedor">
+  <div class="contenedorD">
     <div class="centro">
       <img src={Logo.src} alt="logo" class="logoHome" />
       <Rueda client:load />
     </div>
-    <div class="valoresContenedor">
-      <div class="tituloValores">
+    <div class="diferenciaContenedor">
+      <div class="tituloDiferencia">
         <h2>Lo que nos diferencia</h2>
       </div>
-      <div class="valores">
-        <div class="valoresIntro">
+      <div class="diferencia">
+        <div class="diferenciaIntro">
           <p>
             Somos una agencia de diseño, pero también de producción y ejecución.
             Nos importa que las ideas lleguen a la calle, que funcionen en
@@ -97,6 +97,7 @@ import Logo from "../assets/tapeLogo.png";
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 1200px;
   }
   .tituloValores {
   }
@@ -110,6 +111,7 @@ import Logo from "../assets/tapeLogo.png";
   .valores {
     display: flex;
     justify-content: space-between;
+
     width: 100%;
     gap: 10px;
   }
@@ -143,21 +145,83 @@ import Logo from "../assets/tapeLogo.png";
   }
   .valores div p {
     font-size: 1.2rem;
+    width: 75%;
+    font-family: "Archivo-Regular", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+  }
+  .contenedorD {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1200px;
+    height: fit-content;
+    background-color: #fff9ea;
+    margin-top: 40px;
+  }
+  .diferenciaContenedor {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .tituloDiferencia {
+  }
+  .tituloDiferencia h2 {
+    font-family: "Archivo-Black", sans-serif;
+    font-weight: 900;
+    font-size: 3.6rem;
+    margin: 0;
+    padding: 35px 0px;
+  }
+  .diferencia {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    gap: 10px;
+  }
+  .diferencia div {
+    position: relative;
+    height: 215px;
+    width: 240px;
+  }
+  .diferencia div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 5px;
+    background-color: #d6101d;
+  }
+  .diferencia .diferenciaIntro {
+    position: relative;
+  }
+  .diferencia .diferenciaIntro::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16%;
+    transform: translateX(-50%);
+    width: 35%;
+    height: 4px;
+    background-color: #fff9ea;
+  }
+  .diferencia div p {
+    font-size: 1.2rem;
     width: 80%;
     font-family: "Archivo-Regular", sans-serif;
     font-weight: 400;
     margin: 0px;
   }
-  .diferenciaContenedor {
-    width: 70%;
-    height: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+
   .centro {
     position: relative;
-    height: 100%;
+    height: 400px;
     width: 30%;
   }
   .logoHome {
@@ -209,5 +273,61 @@ import Logo from "../assets/tapeLogo.png";
     background-color: #d6101d;
     font-family: "Archivo-SemiBold", sans-serif;
     cursor: pointer;
+  }
+  @media screen and (max-width: 1250px) {
+    .valoresContenedor {
+      width: 95%;
+    }
+    .contenedorD {
+      width: 95%;
+      flex-direction: row-reverse;
+    }
+    .centro {
+      display: none;
+    }
+
+    .valores div {
+      height: 250px;
+    }
+
+    .dudas h3 {
+      font-family: "Archivo-Black", sans-serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin: 0;
+      padding: 30px 0px;
+      padding-bottom: 15px;
+    }
+    .dudas h4 {
+      font-family: "Archivo-SemiBold", sans-serif;
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 0px;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    .valores {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .valoresContenedor {
+      width: 80%;
+    }
+    .valores div {
+      height: fit-content;
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+    }
+
+    .contenedorD {
+      justify-content: flex-end;
+      width: 80%;
+    }
+    .diferencia div {
+      justify-content: flex-start;
+      height: fit-content;
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+    }
   }
 </style>

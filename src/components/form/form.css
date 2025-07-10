@@ -28,6 +28,7 @@
   width: 180px;
   font-size: 1rem;
   font-family: "Archivo-Bold", sans-serif;
+  cursor: pointer;
 }
 .close button strong {
   font-family: "Archivo-Black", sans-serif;
