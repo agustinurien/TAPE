@@ -89,6 +89,9 @@ const servicio = [
           <div class="servicio-img">
             <img src={icono.iconName} alt={icono.title} />
           </div>
+          <div class="servicio-titulo">
+            <h4>{icono.title}</h4>
+          </div>
           <div class="servicio-svg">
             <svg width="280" height="180">
               <path
@@ -110,6 +113,9 @@ const servicio = [
 </main>
 
 <style>
+  .servicio-titulo{
+    display: none;
+  }
   .contenedor {
     width: 100%;
     height: 80vh;
@@ -251,5 +257,30 @@ const servicio = [
       margin: 0px;
       transform: translateY(-35%);
     }
+    .servicio{
+      width: 140px;
+      height: 140px;
+    }
+    
+    .servicio-svg{
+      display: none;
+    }
+    .servicio-img {
+      width: 80px;
+      height: 80px;
+    }
+    .servicio-titulo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      height: 60px;
+      color: white;
+      font-size: 0.8rem;
+      font-family: "Archivo-Regular", sans-serif;
+    }
+    
+    
   }
 </style>

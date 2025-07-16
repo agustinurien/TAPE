@@ -7,6 +7,8 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 ---
 
 <div class="navbarContainer">
@@ -16,7 +18,15 @@ import {
         <Image src={logo} alt="Logo" width={1000} class="logo" />
       </a>
     </div>
+    <div class="hamburguesa">
+        <GiHamburgerMenu />
+        
+      </div>
+      <div class="close-icon">
+        <IoMdClose />
+      </div>
     <div class="linksContainer">
+      
       <ul class="nav-links">
         <li><a href="/#QuienesSomos">QUIÉNES SOMOS</a></li>
         <li><a href="/#Servicios">SERVICIOS</a></li>
@@ -55,7 +65,54 @@ import {
   </nav>
 </div>
 
+<script>
+  const hamburguesa = document.querySelector(".hamburguesa");
+  const linksContainer = document.querySelector(".linksContainer");
+  const navLinks = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links li a");
+  const closeIcon = document.querySelector(".close-icon");
+
+  
+
+  hamburguesa.addEventListener("click", () => {
+    linksContainer.classList.toggle("active");
+    hamburguesa.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    closeIcon.classList.toggle("active");
+
+    links.forEach(link => {
+      link.classList.toggle("active");
+    });
+
+  });
+  closeIcon.addEventListener("click", () => {
+    linksContainer.classList.remove("active");
+    hamburguesa.classList.remove("active");
+    navLinks.classList.remove("active");
+    closeIcon.classList.remove("active");
+
+    links.forEach(link => {
+      link.classList.remove("active");
+    });
+  });
+  document.addEventListener("click", (event) => {
+    if (!linksContainer.contains(event.target) && !hamburguesa.contains(event.target)) {
+      linksContainer.classList.remove("active");
+      hamburguesa.classList.remove("active");
+      navLinks.classList.remove("active");
+      links.forEach(link => {
+        link.classList.remove("active");
+      });
+      
+      
+    }
+  });
+</script>
+
 <style>
+  .hamburguesa {
+    display: none;
+  }
   .navbarContainer {
     position: fixed;
     top: 0;
@@ -126,5 +183,85 @@ import {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
+  }
+  @media screen and (max-width: 1250px) {
+    .navbarContainer{
+      padding: 0px 20px;
+    }
+    .linksContainer{
+      gap: 1rem;
+    }
+    ul{
+      margin: 0px;
+    }
+    .nav-links{
+      align-items: center;
+    }
+    .social-links{
+      gap: 5px;
+      padding: 0px;
+    }
+    .social-links li a {
+      font-size: 1rem;
+      height: 25px;
+      width: 25px;
+    }
+    .nav-links li a{
+      font-size: 0.7rem;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .hamburguesa {
+    display: flex;
+    z-index: 1001;
+    padding-right: 10px;
+    color: #e2dbca;
+    font-size: 1.4rem;
+  }
+    .hamburguesa.active {
+      display: none;
+    }
+  
+  .close-icon {
+    display: none;
+    
+  }
+  .close-icon.active {
+    display: flex;
+    color: #e2dbca;
+    font-size: 1.5rem;
+    z-index: 1001;
+    padding-right: 10px;
+  }
+  .navbarContainer{
+    padding-right: 0px;
+  }
+  .linksContainer{
+    display: none;
+  }
+  
+  .linksContainer.active{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #121619;
+    padding: 25px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 200px;
+    gap: 30px;
+  }
+  .nav-links.active{
+    width: fit-content;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  .nav-links li a.active{
+    font-size: 1rem;
+  }
   }
 </style>
