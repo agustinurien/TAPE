@@ -95,18 +95,8 @@ import { IoMdClose } from "react-icons/io";
       link.classList.remove("active");
     });
   });
-  document.addEventListener("click", (event) => {
-    if (!linksContainer.contains(event.target) && !hamburguesa.contains(event.target)) {
-      linksContainer.classList.remove("active");
-      hamburguesa.classList.remove("active");
-      navLinks.classList.remove("active");
-      links.forEach(link => {
-        link.classList.remove("active");
-      });
-      
-      
-    }
-  });
+  
+  
 </script>
 
 <style>
