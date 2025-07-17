@@ -24,3 +24,15 @@
   font-size: 2rem;
   font-family: "Archivo-Bold", sans-serif;
 }
+
+@media screen and (max-width: 900px) {
+  .contenedorPreguntas {
+    width: 100%;
+  }
+  .preguntaFrecuente p {
+    font-size: 1.8rem;
+  }
+  .tituloPregunta {
+    font-size: 1.8rem;
+  }
+}
