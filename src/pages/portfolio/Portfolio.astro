@@ -63,7 +63,7 @@ import PortfolioIsland from "../../components/PortfolioIslands.jsx";
     bottom: 0;
     right: 0;
     z-index: 2;
-    height: 80%;
+    height: 70%;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -82,7 +82,7 @@ import PortfolioIsland from "../../components/PortfolioIslands.jsx";
       opacity: 0;
     }
     100% {
-      transform: translate(0%, 35%);
+      transform: translate(0%, 25%);
       opacity: 1;
     }
   }
@@ -118,5 +118,79 @@ import PortfolioIsland from "../../components/PortfolioIslands.jsx";
     height: 20px;
     width: 100%;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 1250px) {
+    .cassette {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    transform: translate(-3.5%, -35%);
+  }
+    .headerPortfolio {
+    height: 350px;
+    margin-top: 65px;
+  }
+  
+    .tituloPortfolio {
+    display: flex;
+    align-items: flex-end;
+    height: 160px;
+    background-color: #d6101d;
+    overflow: hidden;
+    z-index: 1;
+    padding-left: 10px;
+  }
+  .tituloPortfolio h1 {
+    font-size: clamp(2rem, 10vw, 5.5rem);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .headerPortfolio {
+    height: 340px;
+    
+  }
+  .tituloPortfolio h1 {
+    font-size: clamp(2rem, 10vw, 4.5rem);
+  }
+  .tituloPortfolio {
+    
+    height: 135px;
+    
+  }
+  
+  }
+  @media screen and (max-width: 768px) {
+    .headerPortfolio {
+    height: 250px;
+    
+  }
+    .cassette {
+    display: none;
+  }
+    .tituloPortfolio{
+      height: fit-content;
+      padding: 10px;
+    }
+    .tituloPortfolio h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+  }
+  @media screen and (max-width: 500px) {
+    .headerPortfolio {
+      height: 200px;
+    }
+    .tituloPortfolio h1 {
+      font-size: clamp(2rem, 10vw, 3rem);
+    }
+    .tituloPortfolio {
+      height: fit-content;
+      padding: 10px;
+    }
   }
 </style>

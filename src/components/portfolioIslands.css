@@ -122,3 +122,75 @@
 .descargar a {
   background-color: red;
 }
+
+@media screen and (max-width: 1250px) {
+    .navContainer{
+      padding: 0px 20px;
+    }
+    .navContainer ul li button{
+      font-size: 0.9rem;
+    }
+    .contenidoPortfolio {
+      padding: 20px 20px; 
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .proyecto {
+    aspect-ratio: 1 / 0;
+      
+  }
+    .proyectoTitulo {
+    padding: 10px 10px;
+    }
+    .proyectoTitulo h2 {
+      font-size: 0.9rem;
+      padding-left: 0px;
+    }
+    
+  }
+  @media screen and (max-width: 1050px) {
+    .proyectoTitulo{
+      height: fit-content;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      gap: 10px;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .navPortfolio ul {
+      width: 100%;
+      height: 30px;
+
+    }
+    .navPortfolio ul li{
+      padding: 0px;
+      
+
+    }
+    .navPortfolio ul li.active{
+      padding: 0px;
+      
+
+    }
+    .navPortfolio ul li button{
+      font-size: 0.6rem;
+      
+
+    }
+    .contenidoPortfolio {
+      padding: 20px 20px; 
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .proyecto {
+    aspect-ratio: 1 / 0;
+  
+  }
+    
+  }
+  @media screen and (max-width: 500px) {
+    
+    .navContainer{
+      padding: 0px 10px;
+    }
+  }
