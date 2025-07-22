@@ -188,6 +188,7 @@ const Form = () => {
             </div>
           </div>
           <div className="campo submit">
+            {status && <p className="status" style={{ marginTop: 10 }}>{status}</p>}
             <div className="foto">
               <img src={logo.src} alt="logo" />
             </div>
@@ -208,9 +209,10 @@ const Form = () => {
                 {loading ? "ENVIANDO..." : "ENVIAR"}
               </button>
             </div>
-            {status && <p style={{ marginTop: 10 }}>{status}</p>}
+
           </div>
         </form>
+
       </div>
     )
   );

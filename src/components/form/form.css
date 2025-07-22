@@ -49,6 +49,7 @@ form {
   border-right: 2px solid #e2dcc8;
 }
 form .submit {
+  position: relative;
   width: 30%;
   height: 100%;
   display: flex;
@@ -355,6 +356,11 @@ textarea::placeholder {
   font-size: 2rem;
   font-family: "Archivo-Regular", sans-serif;
 }
+.status{
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Archivo-Regular", sans-serif;
+}
 
 @keyframes slideIn {
   from {
@@ -532,6 +538,17 @@ form .submit .contacto h3{
     font-size: 0.8rem;
   
 }
+.status{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 0.8rem;
+  font-family: "Archivo-Regular", sans-serif;
+}
 
 }
 @media  screen and (max-width: 500px) {
@@ -647,6 +664,10 @@ form .submit .contacto h3{
   .close button strong{
     font-family: "Archivo-SemiBold", sans-serif;
   }
-
+  .status{
+  margin: 0px;
+  font-size: 0.5rem;
+  font-family: "Archivo-Regular", sans-serif;
+}
 }
 
