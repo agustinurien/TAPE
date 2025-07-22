@@ -4,11 +4,54 @@ import "./form.css";
 const Form = () => {
   const [showForm, setShowForm] = useState(true);
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
   useEffect(() => {
     const handleOpen = () => setShowForm(true);
     window.addEventListener("abrirFormulario", handleOpen);
     return () => window.removeEventListener("abrirFormulario", handleOpen);
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    const form = e.target;
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      matter: form.matter.value,
+      message: form.message.value,
+      role: form.role.value,
+      source: form.source.value,
+      phone: form.phone.value,
+      city: form.city.value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("✅ ¡Mensaje enviado correctamente!");
+        form.reset();
+      } else {
+        setStatus("❌ Hubo un error al enviar el mensaje.");
+      }
+    } catch (error) {
+      setStatus("❌ Error al conectar con el servidor.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     showForm && (
@@ -19,7 +62,7 @@ const Form = () => {
           </button>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="formContent">
             <div className="campo nombre">
               <div className="nombreContent">
@@ -40,9 +83,9 @@ const Form = () => {
               <div className="profesionContent">
                 <label htmlFor="email">y soy</label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="role"
+                  name="role"
                   placeholder="(Fundador de la marca / Responsable de Marketing / Emprendedor, etc.)"
                   required
                 />
@@ -57,7 +100,7 @@ const Form = () => {
                 </label>
                 <div className="selectContenedor">
                   <h2>(</h2>
-                  <select id="profesion" name="profesion" required>
+                  <select id="matter" name="matter" required>
                     <option value="" disabled selected>
                       Seleccionar
                     </option>
@@ -77,13 +120,13 @@ const Form = () => {
                 <label htmlFor="email">Llegué a TAPE a través de</label>
                 <div className="selectContenedor">
                   <h2>(</h2>
-                  <select id="profesion" name="profesion" required>
+                  <select id="source" name="source" required>
                     <option value="" disabled selected>
                       Seleccionar
                     </option>
-                    <option value="desarrollador">Desarrollador</option>
-                    <option value="diseñador">Diseñador</option>
-                    <option value="artista">Artista</option>
+                    <option value="desarrollador">Linkedin</option>
+                    <option value="diseñador">Instagram</option>
+                    <option value="artista">Sitio Web</option>
                     <option value="otro">Otro</option>
                   </select>
                   <h2>)</h2>
@@ -96,7 +139,9 @@ const Form = () => {
               <div className="resumenContent">
                 <label htmlFor="email">En resumen</label>
                 <textarea
-                  id="resumen"
+                  id="message"
+                  name="message"
+                  required
                   rows="4"
                   placeholder="Contanos brevemente de qué se trata tu proyecto"
                 ></textarea>
@@ -120,19 +165,19 @@ const Form = () => {
             <div className="campo email">
               <div className="emailContent">
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="number"
+                  id="phone"
+                  name="phone"
                   placeholder="Tu número de celular (opcional)"
-                  required
+
                 />
                 <h2>,</h2>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="city"
+                  name="city"
                   placeholder="Ciudad (opcional)"
-                  required
+
                 />
               </div>
               <h2>.</h2>
@@ -151,7 +196,7 @@ const Form = () => {
                 Direccion: San Isidro - Buenos Aires
               </h3>
               <h3>
-                Email: <strong>hola@tapeproducciones.com</strong>
+                Email: <strong>tommy@tapeproducciones.com</strong>
               </h3>
               <h3>
                 Instagram: <strong>@tapeproducciones</strong>
@@ -159,8 +204,11 @@ const Form = () => {
               <div></div>
             </div>
             <div className="buttonEnviar">
-              <button type="submit">ENVIAR</button>
+              <button type="submit" disabled={loading}>
+                {loading ? "ENVIANDO..." : "ENVIAR"}
+              </button>
             </div>
+            {status && <p style={{ marginTop: 10 }}>{status}</p>}
           </div>
         </form>
       </div>
