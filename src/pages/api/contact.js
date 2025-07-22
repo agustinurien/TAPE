@@ -2,7 +2,8 @@ export const prerender = false;
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_APIKEY);
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
 
 export async function POST({ request }) {
   try {
@@ -10,23 +11,26 @@ export async function POST({ request }) {
     const { name, email, matter, message, role, source, phone, city } = body;
 
     // Validación básica
-    if (!name || !email || !matter) {
+    if (!name || !email || !matter || !message || !role || !source) {
       return new Response("Faltan datos requeridos", { status: 400 });
     }
 
-    const text = `
-Has recibido un nuevo mensaje de contacto:
-
-🧑‍💼 Nombre: ${name}
-📧 Email: ${email}
-💼 Rol: ${role || "No especificado"}
-🎯 Motivo del contacto: ${matter}
-🌐 Cómo llegó: ${source || "No especificado"}
-📱 Teléfono: ${phone || "No proporcionado"}
-📍 Ciudad: ${city || "No proporcionada"}
-
-📝 Mensaje:
-${message || "No se proporcionó mensaje."}
+    const html = `
+  <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
+    <h2>📩 Nuevo mensaje de contacto</h2>
+    <p><strong>Nombre:</strong> ${name}</p>
+    <p><strong>📧 Email:</strong> ${email}</p>
+    <p><strong>💼 Rol:</strong> ${role || "No especificado"}</p>
+    <p><strong>🎯 Motivo del contacto:</strong> ${matter}</p>
+    <p><strong>🌐 Cómo llegó a TAPE:</strong> ${source || "No especificado"}</p>
+    <p><strong>📱 Teléfono:</strong> ${phone || "No proporcionado"}</p>
+    <p><strong>📍 Ciudad:</strong> ${city || "No proporcionada"}</p>
+    <hr>
+    <p><strong>📝 Mensaje:</strong></p>
+    <blockquote style="margin-left: 1em; border-left: 4px solid #ccc; padding-left: 1em;">
+      ${message || "No se proporcionó mensaje."}
+    </blockquote>
+  </div>
 `;
 
     const data = {
@@ -34,7 +38,7 @@ ${message || "No se proporcionó mensaje."}
       to: "agustin@tapeproducciones.com",
       replyTo: email,
       subject: `Nuevo mensaje de ${name} - ${matter}`,
-      text,
+      html,
     };
 
     await resend.emails.send(data);

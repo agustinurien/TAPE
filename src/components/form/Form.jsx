@@ -100,14 +100,14 @@ const Form = () => {
                 </label>
                 <div className="selectContenedor">
                   <h2>(</h2>
-                  <select id="matter" name="matter" required>
-                    <option value="" disabled selected>
+                  <select defaultValue="Seleccionar" id="matter" name="matter" required>
+                    <option value="Seleccionar" disabled>
                       Seleccionar
                     </option>
-                    <option value="desarrollador">Desarrollador</option>
-                    <option value="diseñador">Diseñador</option>
-                    <option value="artista">Artista</option>
-                    <option value="otro">Otro</option>
+                    <option value="Redes">Redes</option>
+                    <option value="Web">Web</option>
+                    <option value="Diseño">Diseño</option>
+                    <option value="Otro">Otro</option>
                   </select>
                   <h2>)</h2>
                 </div>
@@ -120,14 +120,14 @@ const Form = () => {
                 <label htmlFor="email">Llegué a TAPE a través de</label>
                 <div className="selectContenedor">
                   <h2>(</h2>
-                  <select id="source" name="source" required>
-                    <option value="" disabled selected>
+                  <select defaultValue="Seleccionar" id="source" name="source" required>
+                    <option value="Seleccionar" disabled>
                       Seleccionar
                     </option>
-                    <option value="desarrollador">Linkedin</option>
-                    <option value="diseñador">Instagram</option>
-                    <option value="artista">Sitio Web</option>
-                    <option value="otro">Otro</option>
+                    <option value="Linkedin">Linkedin</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Sitio Web">Sitio Web</option>
+                    <option value="Otro">Otro</option>
                   </select>
                   <h2>)</h2>
                 </div>
