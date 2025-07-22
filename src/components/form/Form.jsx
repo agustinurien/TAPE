@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo2Faq.png";
 import "./form.css";
 const Form = () => {
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");

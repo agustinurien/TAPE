@@ -34,8 +34,8 @@ export async function POST({ request }) {
 `;
 
     const data = {
-      from: "TAPE WEB <onboarding@resend.dev>",
-      to: "agustin@tapeproducciones.com",
+      from: "TAPE WEB <web@tapeproducciones.com>",
+      to: "tommy@tapeproducciones.com",
       replyTo: email,
       subject: `Nuevo mensaje de ${name} - ${matter}`,
       html,
