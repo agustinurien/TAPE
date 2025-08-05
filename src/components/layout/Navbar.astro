@@ -28,10 +28,18 @@ import { IoMdClose } from "react-icons/io";
     <div class="linksContainer">
       
       <ul class="nav-links">
-        <li><a href="/#QuienesSomos">QUIÉNES SOMOS</a></li>
-        <li><a href="/#Servicios">SERVICIOS</a></li>
-        <li><a href="/portfolio/Portfolio">PORTFOLIO</a></li>
-        <li><a href="/FAQ/Faq">FAQ</a></li>
+        <li><a href="/#QuienesSomos"
+          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+          >QUIÉNES SOMOS</a></li>
+        <li><a href="/#Servicios"
+          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+          >SERVICIOS</a></li>
+        <li><a href="/portfolio/Portfolio"
+          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+          >PORTFOLIO</a></li>
+        <li><a href="/FAQ/Faq"
+          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+          >FAQ</a></li>
         <li>
           <a
             href="#"

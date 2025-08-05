@@ -13,6 +13,12 @@ const Form = () => {
     return () => window.removeEventListener("abrirFormulario", handleOpen);
   }, []);
 
+  useEffect(() => {
+    const handleClose = () => setShowForm(false);
+    window.addEventListener("cerrarFormulario", handleClose);
+    return () => window.removeEventListener("cerrarFormulario", handleClose);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -52,6 +58,8 @@ const Form = () => {
       setLoading(false);
     }
   };
+
+
 
   return (
     showForm && (
