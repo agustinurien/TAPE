@@ -201,7 +201,7 @@ const Form = () => {
               <img src={logo.src} alt="logo" />
             </div>
             <div className="contacto">
-              <h3 style={{ marginBottom: 20 }}>
+              <h3 className="direccion">
                 Direccion: San Isidro - Buenos Aires
               </h3>
               <h3>
