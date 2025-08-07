@@ -43,7 +43,7 @@ import { IoMdClose } from "react-icons/io";
         <li>
           <a
             href="#"
-            onclick="window.dispatchEvent(new Event('abrirFormulario'))"
+            onclick="event.preventDefault(); window.dispatchEvent(new Event('abrirFormulario'))"
             >CONTACTO</a
           >
         </li>

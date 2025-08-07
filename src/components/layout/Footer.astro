@@ -20,7 +20,9 @@ import {
     <div class="contentCrear">
       <div class="formularioContenedor">
         <h4>¿Cómo empezamos <br />una colaboración?</h4>
-        <button class="formularioButton">FORMULARIO</button>
+        <a href="#"
+        onclick="event.preventDefault(); window.dispatchEvent(new Event('abrirFormulario'))"
+        class="formularioButton">FORMULARIO</a>
       </div>
       <p>
         <strong>Rellena el formulario</strong> de comentarios <br /> o <strong
@@ -44,8 +46,12 @@ import {
     </p>
   </div>
   <div class="contacto">
-    <a href="/" class="icon"><IoLogoWhatsapp /></a>
-    <a href="/" class="texto">CONTACTANOS</a>
+    <a href="https://wa.me/5491139169654"
+            target="_blank"
+            rel="noopener noreferrer" class="icon"><IoLogoWhatsapp /></a>
+    <a href="https://wa.me/5491139169654"
+            target="_blank"
+            rel="noopener noreferrer" class="texto">CONTACTANOS</a>
   </div>
   <div class="blackSection">
     <div class="explore">
@@ -53,12 +59,14 @@ import {
     </div>
     <div class="blackSectionText">
       <ul>
-        <li>Servicios</li>
-        <li>Nuestros trabajos</li>
-        <li>Nosotros</li>
-        <li>Valores</li>
-        <li>Formulario</li>
-        <li>Preguntas frecuentes</li>
+        <li><a href="/#Servicios">Servicios</a></li>
+        <li><a href="/portfolio/Portfolio">Nuestros trabajos</a></li>
+        <li><a href="/#QuienesSomos">Nosotros</a></li>
+        <li><a href="/#Valores">Valores</a></li>
+        <li><a href="#"
+        onclick="event.preventDefault(); window.dispatchEvent(new Event('abrirFormulario'))"
+        >Formulario</a></li>
+        <li><a href="/FAQ/Faq">Preguntas frecuentes</a></li>
       </ul>
     </div>
   </div>
@@ -78,7 +86,8 @@ import {
     <div class="copy">
       <div class="contactar">
         <p>Contactar</p>
-        <a href="/"><FaWhatsapp /></a>
+        <a href="https://wa.me/5491139169654"
+            target="_blank"><FaWhatsapp /></a>
       </div>
 
       <div class="copyText">
@@ -90,6 +99,8 @@ import {
     </div>
   </div>
 </footer>
+
+
 
 <style>
   footer {
@@ -118,6 +129,7 @@ import {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
   }
   .fondoCrear {
     width: 100%;
@@ -156,6 +168,10 @@ import {
     color: #d6101d;
   }
   .formularioButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     height: 40px;
     width: 100%;
     border-radius: 20px;
@@ -251,6 +267,11 @@ import {
     font-family: "Archivo-Regular", sans-serif;
 
     color: #fff9ea;
+  }
+  .blackSectionText ul li a {
+    color: #fff9ea;
+    text-decoration: none;
+    
   }
   .socialsContainer {
     position: relative;
