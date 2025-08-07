@@ -9,9 +9,11 @@
 
   height: 100vh;
   width: 100%;
-  margin-top: 97px;
+  padding-top: 97px;
   animation: slideIn 0.5s ease forwards;
   background-color: #fff9e8;
+  
+  box-sizing: border-box;
 }
 
 .close {
@@ -37,16 +39,18 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  height: 84%;
+  
+  height: 100%;
 }
 .formContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
   width: 70%;
-  padding: 25px 80px;
+  padding: 20px 80px;
   border-right: 2px solid #e2dcc8;
+  box-sizing: border-box;
 }
 form .submit {
   position: relative;
@@ -420,7 +424,7 @@ form .submit .contacto .direccion{
 }
 @media screen and (max-width: 1250px) {
   .formContainer {
-    margin-top: 75px;
+    padding-top: 75px;
     
   }
   .formContent {
@@ -468,7 +472,7 @@ form .submit .contacto h3{
 }
 @media  screen and (max-width: 800px) {
   .formContainer {
-    margin-top: 80px;
+    padding-top: 80px;
     
   }
   .close{
@@ -477,7 +481,7 @@ form .submit .contacto h3{
   }
   form{
     flex-direction: column;
-    height: 87%;
+    height: 100%;
   }
   form .submit{
     width: 100%;
@@ -645,6 +649,7 @@ form .submit .contacto h3{
   form .submit{
     flex-direction: column;
     align-items: center;
+    padding-top: 10px;
   }
   form .submit .foto{
     display: none;
