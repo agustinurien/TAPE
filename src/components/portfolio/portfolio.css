@@ -73,47 +73,69 @@
   transform: translate(-50%, -50%);
   width: 78%;
   height: 100%;
-
+  
+  pointer-events: none;
   display: flex;
   z-index: 2;
 }
 
-.medio div {
+.medio .imageContainer {
   width: 100%;
   height: 100%;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.8s ease;
-}
-
-.medio div:first-child {
-  transform: translateX(250px) scaleX(1);
-}
-.medio div:last-child {
-  transform: translateX(-250px) scaleX(1);
-}
-
-
-.medio.animate div {
-  transition: transform 0.3s ease;
   
 }
 
+.medio .imageContainer:first-child {
+  transform: translateX(250px) scaleX(1);
+  
+}
+.medio .imageContainer:last-child {
+  transform: translateX(-250px) scaleX(1);
+}
 
-.medio.animate div:first-child {
+.medio.animate .imageContainer {
+  position: relative;
   transform: translateX(0px) scaleX(1);
+  
 }
-
-.medio.animate div:last-child {
-  transform: translateX(0px) scaleX(1);
+.left {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0%, 21%);
+  pointer-events: auto;
+  width: 86%;
+  height: 70%;
+  z-index: 2;
+  
 }
-
-.medio.animate div:first-child:hover {
-  transform: translateX(-200px) scale(1.2);
+.right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0%, 21%);
+  pointer-events: auto;
+  width: 86%;
+  height: 70%;
+  z-index: 2;
+  
 }
-
-.medio.animate div:last-child:hover {
-  transform: translateX(200px) scale(1.2);
+.left:hover{
+  width: 100%;
+}
+.left:hover + .image {
+  transform: translateX(-100px) scale(1.2);
+  
+}
+.right:hover{
+  width: 100%;
+}
+.right:hover + .image{
+  transform: translateX(100px) scale(1.2);
+  
 }
 
 
@@ -129,7 +151,7 @@
   justify-content: space-between;
   z-index: 1;
 }
-.fondo div {
+.fondo .imageContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -139,39 +161,63 @@
   transform-origin: center;
   transition: transform 0.8s ease;
 }
-.fondo div:first-child {
+.fondo .imageContainer:first-child {
   transform: translateX(450px) scaleX(1);
 }
 
-.fondo div:last-child {
+.fondo .imageContainer:last-child {
   transform: translateX(-450px) scaleX(1);
 }
 
-
-.fondo.animate div:first-child {
+.fondo.animate .imageContainer {
+  position: relative;
   transform: translateX(0px) scaleX(1);
 }
 
-.fondo.animate div:last-child {
-  transform: translateX(0px) scaleX(1);
+.leftFondo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0%, 50%);
+  pointer-events: auto;
+  width: 80%;
+  height: 50%;
+  z-index: 2;
+  
 }
-
-
-.fondo.animate div {
-  transition: transform 0.3s ease;
+.rightFondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0%, 50%);
+  pointer-events: auto;
+  width: 80%;
+  height: 50%;
+  z-index: 2;
 }
+  
 
-.fondo.animate div:first-child:hover {
+.leftFondo:hover {
+  width: 100%;
+  
+}
+.leftFondo:hover + .image{
   transform: translateX(-100px) scale(1.2);
+  
 }
-
-.fondo.animate div:last-child:hover {
+.rightFondo:hover {
+  width: 100%;
+  
+}
+.rightFondo:hover + .image{
   transform: translateX(100px) scale(1.2);
+  
 }
 .image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 .portfolioButton {
   display: flex;

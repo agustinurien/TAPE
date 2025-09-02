@@ -115,7 +115,7 @@ const PortfolioIslands = () => {
       title: "Capital Agribuisiness",
       portada: capital,
       servicios: ["sitios web", "logo"],
-      linkWeb: "https://capitalagribuisness.vercel.app/",
+      linkWeb: "https://capitalagribusiness.com/",
     },
     {
       title: "Amalia Cavagnagh",
@@ -140,7 +140,7 @@ const PortfolioIslands = () => {
       title: "Santiago Calello",
       portada: calello,
       servicios: ["sitios web"],
-      linkWeb: "https://calello.vercel.app/",
+      linkWeb: "https://www.santiagocalello.com.ar/",
     },
     {
       title: "Martin Cesarsky",

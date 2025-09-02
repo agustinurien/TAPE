@@ -37,19 +37,23 @@ const Portfolio = () => {
           <img src={cassete.src} alt="cassete" className="image" />
         </div>
         <div className={`fondo ${inView ? "animate" : ""}`}>
-          <div>
+          <div className="imageContainer">
+            <div className="leftFondo"></div>
             <img src={portfolio5.src} alt="" className="image" />
           </div>
-          <div>
+          <div className="imageContainer">
+            <div className="rightFondo"></div>
             <img src={portfolio3.src} alt="" className="image" />
           </div>
         </div>
 
         <div className={`medio ${inView ? "animate" : ""}`}>
-          <div>
+          <div className="imageContainer">
+            <div className="left"></div>
             <img src={portfolio4.src} alt="" className="image" />
           </div>
-          <div>
+          <div className="imageContainer">
+            <div className="right"></div>
             <img src={portfolio2.src} alt="" className="image" />
           </div>
         </div>
