@@ -18,6 +18,7 @@
   height: fit-content;
   width: 100%;
   background-color: #0f1416;
+  overflow-x: hidden;
 }
 
 
@@ -41,11 +42,13 @@
   align-items: center;
   justify-content: center;
   z-index: 4;
+  pointer-events: none;
 }
 .cassete .image {
   width: 90%;
   height: 100%;
   object-fit: contain;
+  
 }
 .frente {
   z-index: 3;
@@ -80,18 +83,22 @@
   height: 100%;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease;
 }
+
 .medio div:first-child {
   transform: translateX(250px) scaleX(1);
 }
-
 .medio div:last-child {
   transform: translateX(-250px) scaleX(1);
 }
-.medio.animate {
-  opacity: 1;
+
+
+.medio.animate div {
+  transition: transform 0.3s ease;
+  
 }
+
 
 .medio.animate div:first-child {
   transform: translateX(0px) scaleX(1);
@@ -100,6 +107,15 @@
 .medio.animate div:last-child {
   transform: translateX(0px) scaleX(1);
 }
+
+.medio.animate div:first-child:hover {
+  transform: translateX(-200px) scale(1.2);
+}
+
+.medio.animate div:last-child:hover {
+  transform: translateX(200px) scale(1.2);
+}
+
 
 .fondo {
   position: absolute;
@@ -121,7 +137,7 @@
   height: 100%;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease;
 }
 .fondo div:first-child {
   transform: translateX(450px) scaleX(1);
@@ -130,9 +146,7 @@
 .fondo div:last-child {
   transform: translateX(-450px) scaleX(1);
 }
-.fondo.animate {
-  opacity: 1;
-}
+
 
 .fondo.animate div:first-child {
   transform: translateX(0px) scaleX(1);
@@ -140,6 +154,19 @@
 
 .fondo.animate div:last-child {
   transform: translateX(0px) scaleX(1);
+}
+
+
+.fondo.animate div {
+  transition: transform 0.3s ease;
+}
+
+.fondo.animate div:first-child:hover {
+  transform: translateX(-100px) scale(1.2);
+}
+
+.fondo.animate div:last-child:hover {
+  transform: translateX(100px) scale(1.2);
 }
 .image {
   width: 100%;
@@ -176,6 +203,7 @@
   .titlePortfolio {
     padding-top: 80px;
   }
+  
 }
 @media screen and (max-width: 500px) {
   .titlePortfolio {
