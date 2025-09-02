@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./portfolio.css";
 import frenteImage from "../../assets/portfolio1@300x.png";
 import portfolio2 from "../../assets/portfolio2.png";
@@ -8,8 +8,27 @@ import portfolio5 from "../../assets/portfolio1.png";
 import cassete from "../../assets/cassete.png";
 
 const Portfolio = () => {
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
+  console.log(inView);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true);
+      },
+      { threshold: 0.5 } // cuando el 100% esté visible
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
-    <div className="portfolio">
+    <div className="portfolio" ref={sectionRef}>
       <h2 className="titlePortfolio">
         Nuestros <strong>trabajos</strong> y <strong>clientes</strong>.
       </h2>
@@ -17,7 +36,7 @@ const Portfolio = () => {
         <div className="cassete">
           <img src={cassete.src} alt="cassete" className="image" />
         </div>
-        <div className="fondo">
+        <div className={`fondo ${inView ? "animate" : ""}`}>
           <div>
             <img src={portfolio5.src} alt="" className="image" />
           </div>
@@ -26,7 +45,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="medio">
+        <div className={`medio ${inView ? "animate" : ""}`}>
           <div>
             <img src={portfolio4.src} alt="" className="image" />
           </div>
@@ -36,13 +55,13 @@ const Portfolio = () => {
         </div>
 
         <div className="frente">
-          <div className="frenteImage">
+          <div className={`frenteImage ${inView ? "animate" : ""}`}>
             <img src={frenteImage.src} alt="" className="image" />
           </div>
         </div>
       </div>
 
-      <a href="/portfolio/Portfolio" className="portfolioButton">
+      <a href="/portfolio/Portfolio" className={`portfolioButton ${inView ? "animate" : ""}`}>
         VER PORTFOLIO
       </a>
     </div>

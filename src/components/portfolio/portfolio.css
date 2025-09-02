@@ -55,6 +55,13 @@
 .frenteImage {
   width: 100%;
   height: 100%;
+  transform: scale(0.2);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.2s ease;
+}
+.frenteImage.animate {
+  transform: scale(1);
+  opacity: 1;
 }
 .medio {
   position: absolute;
@@ -67,10 +74,33 @@
   display: flex;
   z-index: 2;
 }
+
 .medio div {
   width: 100%;
   height: 100%;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
+.medio div:first-child {
+  transform: translateX(250px) scaleX(1);
+}
+
+.medio div:last-child {
+  transform: translateX(-250px) scaleX(1);
+}
+.medio.animate {
+  opacity: 1;
+}
+
+.medio.animate div:first-child {
+  transform: translateX(0px) scaleX(1);
+}
+
+.medio.animate div:last-child {
+  transform: translateX(0px) scaleX(1);
+}
+
 .fondo {
   position: absolute;
   top: 50%;
@@ -89,8 +119,28 @@
   justify-content: flex-end;
   width: 550px;
   height: 100%;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.fondo div:first-child {
+  transform: translateX(450px) scaleX(1);
 }
 
+.fondo div:last-child {
+  transform: translateX(-450px) scaleX(1);
+}
+.fondo.animate {
+  opacity: 1;
+}
+
+.fondo.animate div:first-child {
+  transform: translateX(0px) scaleX(1);
+}
+
+.fondo.animate div:last-child {
+  transform: translateX(0px) scaleX(1);
+}
 .image {
   width: 100%;
   height: 100%;
@@ -112,6 +162,14 @@
   font-family: "Archivo-SemiBold", sans-serif;
   cursor: pointer;
   text-decoration: none;
+  transform: translateY(-200px);
+  transition: transform 0.5s ease, opacity 0.8s ease;
+  opacity: 0;
+}
+
+.portfolioButton.animate {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 @media screen and (max-width: 1250px) {
