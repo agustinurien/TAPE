@@ -6,11 +6,11 @@ import portfolio3 from "../../assets/portfolio3.png";
 import portfolio4 from "../../assets/portfolio4.png";
 import portfolio5 from "../../assets/portfolio1.png";
 import cassete from "../../assets/cassete.png";
+import cassetteRueda from "../../assets/ruedaCassette.png";
 
 const Portfolio = () => {
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
-  console.log(inView);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,6 +35,12 @@ const Portfolio = () => {
       <div className="portfolio__container">
         <div className="cassete">
           <img src={cassete.src} alt="cassete" className="image" />
+
+          <div className="cassetteRueda">
+            <img src={cassetteRueda.src} alt="cassette rueda" className="imageRueda" />
+            <img src={cassetteRueda.src} alt="cassette rueda" className="imageRueda" />
+          </div>
+
         </div>
         <div className={`fondo ${inView ? "animate" : ""}`}>
           <div className="imageContainer">

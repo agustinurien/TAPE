@@ -50,6 +50,38 @@
   object-fit: contain;
   
 }
+.cassetteRueda{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  height: fit-content;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  rotate: -10deg;
+  margin-left: 15px;
+  
+  padding-bottom: 60px;
+}
+
+.cassetteRueda .imageRueda { 
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.portfolio__container:hover .cassetteRueda .imageRueda {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .frente {
   z-index: 3;
   height: 100%;
