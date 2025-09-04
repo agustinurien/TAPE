@@ -9,15 +9,17 @@ import Navbar from "../components/layout/Navbar.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/SVG/ruedapesta.svg" />
-    <!-- Fallback PNG (opcional si Safari no soporta SVG en favicon) -->
-    <link rel="icon" type="image/png" href="/src/assets/icon-512.png" sizes="512x512" />
+    <!-- Favicon clásico (soporte legacy) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/src/assets/apple-touch-icon.png" sizes="180x180" />
+  <!-- Favicon moderno en SVG -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Safari Pinned Tab (opcional pero recomendado para macOS) -->
-    <link rel="mask-icon" href="/src/assets/safari-pinned-tab.svg" color="#000000" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180x180.png" />
+
+  <!-- Safari Pinned Tab (macOS/iOS) -->
+  <link rel="mask-icon" href="/public/safari-pinned-tab.svg" color="#000000" />
     <meta name="generator" content={Astro.generator} />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="TAPE" />
