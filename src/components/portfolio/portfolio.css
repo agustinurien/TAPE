@@ -19,6 +19,7 @@
   width: 100%;
   background-color: #0f1416;
   overflow-x: hidden;
+  padding-bottom: 20px;
 }
 
 
@@ -271,6 +272,11 @@
   transition: transform 0.5s ease, opacity 0.8s ease;
   opacity: 0;
 }
+
+.portfolioButton:hover {
+    box-shadow: 0px 3px 10px #000000;
+    transition: all 0.3s ease;
+  }
 
 
 .portfolioButton.animate {

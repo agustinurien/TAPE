@@ -40,7 +40,7 @@ import {
   </div>
   <div class="idea">
     <p>
-      Contanos tu idea, tu <strong>marca</strong> o tu <strong>ptoyecto</strong
+      Contanos tu idea, tu <strong>marca</strong> o tu <strong>proyecto</strong
       >. <br />En <strong>TAPE</strong>, lo transformamos en algo que <br
       />funcione.
     </p>
@@ -182,6 +182,10 @@ import {
     font-family: "Archivo-SemiBold", sans-serif;
     cursor: pointer;
   }
+  .formularioButton:hover {
+    box-shadow: 0px 3px 10px #00000094;
+    transition: all 0.3s ease;
+  }
   .contentCrear p {
     width: 100%;
     font-family: "Archivo-Regular", sans-serif;
@@ -206,6 +210,7 @@ import {
     display: flex;
     margin-bottom: 50px;
     margin-top: 10px;
+    
   }
   .contacto a {
     background-color: #13171a;
@@ -215,6 +220,7 @@ import {
     justify-content: center;
     align-items: center;
   }
+
   .contacto .icon {
     background-color: #13171a;
     border-radius: 100%;
@@ -224,6 +230,11 @@ import {
     width: 50px;
     height: 50px;
     font-size: 35px;
+  }
+  .contacto:hover a {
+    background-color: #b90000;
+    
+    transition: all 0.3s ease;
   }
   .contacto .texto {
     font-family: "Archivo-SemiBold", sans-serif;
@@ -262,17 +273,34 @@ import {
     margin: 0px;
   }
   .blackSectionText ul li {
+    
     font-size: 2.8rem;
     list-style: none;
     font-family: "Archivo-Regular", sans-serif;
+    
 
     color: #fff9ea;
   }
   .blackSectionText ul li a {
+    position: relative;
     color: #fff9ea;
     text-decoration: none;
     
   }
+  .blackSectionText ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px; 
+  width: 0px;
+  height: 3px;
+  background-color: #fff9ea; /* usa el color del texto */
+  transition: width 0.3s ease-in-out;
+}
+
+.blackSectionText ul li a:hover::after {
+  width: 100%;
+}
   .socialsContainer {
     position: relative;
     display: flex;
@@ -322,6 +350,12 @@ import {
     color: #000000;
     margin: 0px;
     font-size: 1.4rem;
+    transition: transform 0.2s ease;
+
+  }
+  .socials a:hover {
+    transform: scale(1.2);
+    
   }
   .copy {
     display: flex;
@@ -349,10 +383,16 @@ import {
     color: #fff9ea;
     width: 45px;
     height: 45px;
-    background-color: #fff9ea00;
+    background-color: #99814400;
     border-radius: 100%;
     border: 2px solid #fff9ea;
     font-size: 2rem;
+    transition: all 0.3s ease;
+  }
+  .contactar a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    
   }
   .contactar p {
     font-family: "Archivo-SemiBold", sans-serif;
