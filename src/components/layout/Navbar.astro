@@ -160,16 +160,34 @@ import { IoMdClose } from "react-icons/io";
     gap: 2rem;
   }
 
+  .nav-links li {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
   .nav-links li a {
     color: #e2dbca;
     text-decoration: none;
     font-family: "Archivo-SemiBold", sans-serif;
     font-size: 0.9rem;
+    
+  }
+  .nav-links li:hover {
+    transform: scale(1.1) rotate(-5deg);
+    color: #fff;
+    
   }
   .social-links {
     list-style: none;
     display: flex;
     gap: 1rem;
+  }
+  .social-links li{
+    transition: transform 0.2s ease;
+  }
+
+  .social-links li:hover {
+    transform: scale(1.2);
+    color: #fff;
   }
 
   .social-links li a {

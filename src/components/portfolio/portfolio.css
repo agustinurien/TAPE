@@ -272,6 +272,7 @@
   opacity: 0;
 }
 
+
 .portfolioButton.animate {
   transform: translateY(0px);
   opacity: 1;
