@@ -32,6 +32,10 @@
   font-family: "Archivo-Bold", sans-serif;
   cursor: pointer;
 }
+.close button:hover {
+  background-color: rgba(0, 0, 0, 0.877);
+  
+}
 .close button strong {
   font-family: "Archivo-Black", sans-serif;
 }
@@ -99,6 +103,11 @@ form .submit .contacto h3 strong {
   color: rgb(255, 255, 255);
   font-size: 1.1rem;
   cursor: pointer;
+}
+.buttonEnviar button:hover {
+  box-shadow: 0px 3px 10px #00000094;
+    transition: all 0.3s ease;
+  
 }
 form label {
   font-size: 2rem;

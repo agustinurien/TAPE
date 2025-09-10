@@ -23,6 +23,29 @@
   align-items: center;
   justify-content: center;
   color: black;
+  position: relative;
+  z-index: 1;
+}
+.navPortfolio ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #d6101d;
+  
+  transition: width 0.3s;
+  z-index: -1;
+}
+.navPortfolio ul li:hover::after {
+  width: 100%;
+  
+}
+.navPortfolio ul li:hover button{
+  color: white;
+  transition: all 0.2s ease;
+  
 }
 .navPortfolio ul .active {
   background-color: #d6101d;
@@ -45,6 +68,7 @@
   background: none;
   cursor: pointer;
 }
+
 .contenidoPortfolio {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
