@@ -19,27 +19,40 @@ import { IoMdClose } from "react-icons/io";
       </a>
     </div>
     <div class="hamburguesa">
-        <GiHamburgerMenu />
-        
-      </div>
-      <div class="close-icon">
-        <IoMdClose />
-      </div>
+      <GiHamburgerMenu />
+    </div>
+    <div class="close-icon">
+      <IoMdClose />
+    </div>
     <div class="linksContainer">
-      
       <ul class="nav-links">
-        <li><a href="/#QuienesSomos"
-          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
-          >QUIÉNES SOMOS</a></li>
-        <li><a href="/#Servicios"
-          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
-          >SERVICIOS</a></li>
-        <li><a href="/portfolio/Portfolio"
-          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
-          >PORTFOLIO</a></li>
-        <li><a href="/FAQ/Faq"
-          onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
-          >FAQ</a></li>
+        <li>
+          <a
+            href="/#QuienesSomos"
+            onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+            >QUIÉNES SOMOS</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#Servicios"
+            onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+            >SERVICIOS</a
+          >
+        </li>
+        <li>
+          <a
+            href="/portfolio/Portfolio"
+            onclick="window.dispatchEvent(new Event('cerrarFormulario'))"
+            >PORTFOLIO</a
+          >
+        </li>
+        <li>
+          <a
+            href="/FAQ/Faq"
+            onclick="window.dispatchEvent(new Event('cerrarFormulario'))">FAQ</a
+          >
+        </li>
         <li>
           <a
             href="#"
@@ -80,18 +93,15 @@ import { IoMdClose } from "react-icons/io";
   const links = document.querySelectorAll(".nav-links li a");
   const closeIcon = document.querySelector(".close-icon");
 
-  
-
   hamburguesa.addEventListener("click", () => {
     linksContainer.classList.toggle("active");
     hamburguesa.classList.toggle("active");
     navLinks.classList.toggle("active");
     closeIcon.classList.toggle("active");
 
-    links.forEach(link => {
+    links.forEach((link) => {
       link.classList.toggle("active");
     });
-
   });
   closeIcon.addEventListener("click", () => {
     linksContainer.classList.remove("active");
@@ -99,12 +109,10 @@ import { IoMdClose } from "react-icons/io";
     navLinks.classList.remove("active");
     closeIcon.classList.remove("active");
 
-    links.forEach(link => {
+    links.forEach((link) => {
       link.classList.remove("active");
     });
   });
-  
-  
 </script>
 
 <style>
@@ -146,6 +154,11 @@ import { IoMdClose } from "react-icons/io";
   .logo {
     width: 100%;
     height: auto;
+    transition: all 0.2s ease-in-out;
+  }
+  .logo:hover {
+    filter: drop-shadow(1px 1px 8px #fff8ea6f) brightness(120%);
+    scale: 1.05;
   }
   .linksContainer {
     display: flex;
@@ -162,28 +175,24 @@ import { IoMdClose } from "react-icons/io";
 
   .nav-links li {
     transition: transform 0.2s ease;
-    
   }
-  
-  
+
   .nav-links li a {
     color: #e2dbca;
     text-decoration: none;
     font-family: "Archivo-SemiBold", sans-serif;
     font-size: 0.9rem;
-    
   }
   .nav-links li:hover {
     transform: scale(1.1);
     color: #fff;
-    
   }
   .social-links {
     list-style: none;
     display: flex;
     gap: 1rem;
   }
-  .social-links li{
+  .social-links li {
     transition: transform 0.2s ease;
   }
 
@@ -206,19 +215,19 @@ import { IoMdClose } from "react-icons/io";
     font-weight: bold;
   }
   @media screen and (max-width: 1250px) {
-    .navbarContainer{
+    .navbarContainer {
       padding: 0px 20px;
     }
-    .linksContainer{
+    .linksContainer {
       gap: 1rem;
     }
-    ul{
+    ul {
       margin: 0px;
     }
-    .nav-links{
+    .nav-links {
       align-items: center;
     }
-    .social-links{
+    .social-links {
       gap: 5px;
       padding: 0px;
     }
@@ -227,62 +236,61 @@ import { IoMdClose } from "react-icons/io";
       height: 25px;
       width: 25px;
     }
-    .nav-links li a{
+    .nav-links li a {
       font-size: 0.7rem;
     }
   }
   @media screen and (max-width: 800px) {
     .hamburguesa {
-    display: flex;
-    z-index: 1001;
-    padding-right: 10px;
-    color: #e2dbca;
-    font-size: 1.4rem;
-  }
+      display: flex;
+      z-index: 1001;
+      padding-right: 10px;
+      color: #e2dbca;
+      font-size: 1.4rem;
+    }
     .hamburguesa.active {
       display: none;
     }
-  
-  .close-icon {
-    display: none;
-    
-  }
-  .close-icon.active {
-    display: flex;
-    color: #e2dbca;
-    font-size: 1.5rem;
-    z-index: 1001;
-    padding-right: 10px;
-  }
-  .navbarContainer{
-    padding-right: 0px;
-  }
-  .linksContainer{
-    display: none;
-  }
-  
-  .linksContainer.active{
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    background-color: #121619;
-    padding: 25px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 200px;
-    gap: 30px;
-  }
-  .nav-links.active{
-    width: fit-content;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-left: 0px;
-  }
-  .nav-links li a.active{
-    font-size: 1rem;
-  }
+
+    .close-icon {
+      display: none;
+    }
+    .close-icon.active {
+      display: flex;
+      color: #e2dbca;
+      font-size: 1.5rem;
+      z-index: 1001;
+      padding-right: 10px;
+    }
+    .navbarContainer {
+      padding-right: 0px;
+    }
+    .linksContainer {
+      display: none;
+    }
+
+    .linksContainer.active {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      background-color: #121619;
+      padding: 25px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 200px;
+      gap: 30px;
+    }
+    .nav-links.active {
+      width: fit-content;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-left: 0px;
+    }
+    .nav-links li a.active {
+      font-size: 1rem;
+    }
   }
 </style>

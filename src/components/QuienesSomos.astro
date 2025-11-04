@@ -3,11 +3,12 @@ import Rueda2 from "./Rueda2";
 import tommy from "../assets/tommy.png";
 import mateo from "../assets/mateo.png";
 import chiara from "../assets/chiara.png";
-import nano from "../assets/nano.png";
+import negra from "../assets/negra.png";
 import agus from "../assets/agus.png";
 import mili from "../assets/mili.png";
 import loli from "../assets/loli.png";
 import lulu from "../assets/lulu.png";
+import tincho from "../assets/tincho.png";
 
 const members = [
   {
@@ -23,8 +24,8 @@ const members = [
     img: chiara,
   },
   {
-    role: "El que resuelve antes de que termines la frase. Creativo nato, genio de la edición y dueño del “tranqui”, ya lo tengo.",
-    img: nano,
+    role: "Jefa de imagen y fotógrafa profesional. Tiene una mirada única y una confianza digna de una “leyenda del fútbol”. Entre disparo y disparo, suele recordar que hay un gin hecho con “agua del propio deshielo”.",
+    img: negra,
   },
   {
     role: "/code=tape001 El mago del código. Pone Olga de fondo, se mete en la Matrix y no sale hasta que el sitio funcione perfecto.",
@@ -41,6 +42,10 @@ const members = [
   {
     role: "Recién llegada, pero en modo TAPE. Hace copies, ideas y magia con su compu. Si ves algo nuevo en las redes, probablemente sea culpa de ella.",
     img: lulu,
+  },
+  {
+    role: "Editor, diseñador y maestro del motion. Transforma ideas en videos que sorprenden. Tiene ritmo, humor… y una gran experiencia en hacer buenos cortes, dentro y fuera del timeline.",
+    img: tincho,
   },
 ];
 ---
@@ -75,7 +80,13 @@ const members = [
     {
       members.map((member) => (
         <div class="teamMember">
-          <div class="teamMemberContainer">
+          <div
+            class={
+              member.img === negra || member.img === tincho
+                ? "teamMemberContainerSpecial"
+                : "teamMemberContainer"
+            }
+          >
             <img src={member.img.src} alt="" class="teamMemberImg" />
           </div>
           <p>{member.role}</p>
@@ -146,6 +157,7 @@ const members = [
 
     z-index: 1;
   }
+
   .teamMember {
     height: fit-content;
     width: 300px;
@@ -215,18 +227,16 @@ const members = [
     .quienesSomosHeader {
       height: 250px;
     }
-    
-    
   }
- @media screen and (max-width: 500px) {
-  .teamMemberImg:hover {
-    transform: none !important;
-  }
+  @media screen and (max-width: 500px) {
+    .teamMemberImg:hover {
+      transform: none !important;
+    }
 
-  .teamMember p {
-    animation: none !important;
-    opacity: 1;
-    transform: translateY(-5px);
+    .teamMember p {
+      animation: none !important;
+      opacity: 1;
+      transform: translateY(-5px);
+    }
   }
-}
 </style>

@@ -30,6 +30,8 @@ import JPR from "../../public/manuales/JPR.pdf";
 import REFMASTER from "../../public/manuales/REFMASTER.pdf";
 import URDAPILLETA from "../../public/manuales/URDAPILLETA.pdf";
 import MARKBAY from "../../public/manuales/MARKBAY.pdf";
+import martineta from "../assets/proyectos/martineta.jpg";
+import bonprix from "../assets/proyectos/bonprix.jpg";
 
 import { FaGlobe, FaInstagram } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
@@ -68,6 +70,7 @@ const PortfolioIslands = () => {
       linkDescarga: JPR,
       linkWeb: "https://jpr-web-plum.vercel.app/",
     },
+
     {
       title: "Bold Real Estate",
       portada: bold,
@@ -118,6 +121,13 @@ const PortfolioIslands = () => {
       linkWeb: "https://capitalagribusiness.com/",
     },
     {
+      title: "Bonprix",
+      portada: bonprix,
+      servicios: ["sitios web", "redes sociales"],
+      linkRed: "https://www.instagram.com/grupo.bonprix/",
+      linkWeb: "https://www.grupobonprix.com.ar/",
+    },
+    {
       title: "Amalia Cavagnagh",
       portada: amalia,
       servicios: ["sitios web", "logo"],
@@ -128,6 +138,12 @@ const PortfolioIslands = () => {
       portada: market,
       servicios: ["identidad de marca", "logo"],
       linkDescarga: MARKBAY,
+    },
+    {
+      title: "Martineta",
+      portada: martineta,
+      servicios: ["redes sociales"],
+      linkRed: "https://www.instagram.com/panaderiamartineta/",
     },
     {
       title: "Refmaster",
@@ -242,7 +258,7 @@ const PortfolioIslands = () => {
                       download={proyecto.linkDescarga}
                       className="descargarLink"
                     >
-                      Descargar manual de marca
+                      Manual de marca
                     </a>
                     <a href={proyecto.linkDescarga}>
                       <MdOutlineFileDownload fontSize={22} />
